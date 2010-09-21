@@ -1,0 +1,23 @@
+<h1>Listing Muscle Groups</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @muscle_groups.each do |muscle_group| %>
+  <tr>
+    <td><%= muscle_group.name %></td>
+    <td><%= link_to 'Show', muscle_group %></td>
+    <td><%= link_to 'Edit', edit_muscle_group_path(muscle_group) %></td>
+    <td><%= link_to 'Destroy', muscle_group, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Muscle group', new_muscle_group_path %>

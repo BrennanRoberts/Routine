@@ -1,0 +1,19 @@
+<%= form_for(@workout) do |f| %>
+  <%= render "shared/error_messages", :target => @workout %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :complete %><br />
+    <%= f.check_box :complete %>
+  </div>
+  <%= f.fields_for :workout_sets do |builder| %>
+  	<%= render 'workout_set_fields', :f => builder %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Exercise", f, :workout_sets %></p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

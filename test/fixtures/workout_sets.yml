@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  workout_id: 1
+  exercise_id: 1
+  order: 1
+  magnitude: 1
+  measurement_unit_id: 1
+  weight: 1
+
+two:
+  workout_id: 1
+  exercise_id: 1
+  order: 1
+  magnitude: 1
+  measurement_unit_id: 1
+  weight: 1

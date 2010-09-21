@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @exercise.name %>
+</p>
+<p>
+	<b>Muscles:</b>
+	<ul>
+	<% @exercise.muscles.each do |muscle| %>
+		<li><%= muscle.name %></li>
+	<% end %>
+	</ul>
+</p>
+
+
+<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<%= link_to 'Back', exercises_path %>

@@ -1,0 +1,23 @@
+<h1>Listing muscles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @muscles.each do |muscle| %>
+  <tr>
+    <td><%= muscle.name %></td>
+    <td><%= link_to 'Show', muscle %></td>
+    <td><%= link_to 'Edit', edit_muscle_path(muscle) %></td>
+    <td><%= link_to 'Destroy', muscle, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Muscle', new_muscle_path %>

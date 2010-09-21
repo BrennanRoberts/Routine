@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @workout.date %>
+</p>
+
+<p>
+  <b>Complete:</b>
+  <%= @workout.complete %>
+</p>
+
+<p>
+	<b>Exercises:</b>
+	<ul>
+	<% @workout.workout_sets.each do |set| %>
+		<li><%= set.exercise.name %> ( <%= set.magnitude %> <%= set.measurement_unit.name %> ) <%= link_to 'remove', set, :confirm => 'Are you sure?', :method => :delete %></li>
+	<% end %>
+	</ul>
+</p>
+
+
+<%= link_to 'Edit', edit_workout_path(@workout) %> |
+<%= link_to 'Back', workouts_path %>

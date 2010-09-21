@@ -1,0 +1,15 @@
+<%= form_for(@muscle) do |f| %>
+  <%= render "shared/error_messages", :target => @muscle %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+  	<%= f.label :muscle_group_id, "Muscle Group" %>
+  	<%= f.collection_select :muscle_group_id, MuscleGroup.all, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

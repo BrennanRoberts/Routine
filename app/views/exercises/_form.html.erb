@@ -1,0 +1,19 @@
+<%= form_for(@exercise) do |f| %>
+  <%= render "shared/error_messages", :target => @exercise %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+		<% Muscle.all.each do |muscle| %>
+		<div>
+			<%= check_box_tag "exercise[muscle_ids][]", muscle.id, @exercise.muscles.include?(muscle) %>
+			<%= muscle.name %>
+		</div>
+		<% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
