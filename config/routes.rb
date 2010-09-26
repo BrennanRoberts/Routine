@@ -11,7 +11,11 @@ Routine::Application.routes.draw do
 	  end
 	end
 
-	resources :exercises
+	resources :exercises do
+		collection do
+			get 'autocomplete'
+		end	
+	end
 	
 	resources :workout_sets
 	

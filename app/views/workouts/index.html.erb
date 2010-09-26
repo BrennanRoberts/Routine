@@ -1,20 +1,15 @@
 <h1>Listing workouts</h1> 
 <%= workout_subnav %>
 <table>
-  <tr>
-    <th>Date</th>
-    <th>Complete</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @workouts.each do |workout| %>
   <tr>
-    <td><%= workout.date %></td>
-    <td><%= workout.complete %></td>
-    <td><%= link_to 'Show', workout %></td>
-    <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+    <td><%= workout.complete ? "Complete" : "Incomplete" %></td>
+    <td><%= link_to workout.date, edit_workout_path(workout) %></td>
+    <td>
+    <% workout.muscle_groups.each do |mg| %>
+    	<span><%= mg %></span>
+    <% end %>
+    </td>
     <td><%= link_to 'Destroy', workout, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

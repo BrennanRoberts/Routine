@@ -1,0 +1,124 @@
+* { margin: 0; padding: 0; }
+
+body { 
+	background-color: #212121; 
+	color: #fff;
+	font-family: Helvetica;
+}
+
+ul { list-style: none; }
+a { color: #fff; }
+
+input { border: 1px solid #999; background-color: transparent; outline: none; color: #fff;}
+
+td { padding: 10px; }
+
+.hidden { display: none; }
+
+.wrap {
+	width: 640px;
+	margin: 0 auto;
+}
+
+header {
+	background-color: #2c2c2c;
+	text-align: center;
+}
+
+nav { 
+	text-transform: uppercase;
+	
+}
+
+nav ul {
+	overflow: hidden;
+}
+
+nav li {
+	float: left;
+	margin: 20px 40px;
+}
+
+nav li a {
+	text-decoration: none;
+	letter-spacing: 3px; 
+}
+
+#content {
+	padding-top: 20px;
+	font-size: 26px;
+}
+
+#content h1 {
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-weight: normal;
+	font-size: 26px;
+	border-bottom: 1px solid #fff;
+	padding-bottom: 8px;	
+}
+
+#content input {
+	font-size: 26px;
+}
+
+
+/* Workout Set table in workout#_form */
+table.workout_sets {
+	margin-bottom: 30px;
+}
+table.workout_sets td {
+	padding: 10px;
+}
+/* Add Exercise widget in Workout#_form */
+.add-exercise-widget {
+	background-color: #2c2c2c;
+	overflow: hidden;
+}
+.add-exercise-widget .control-bar {
+	overflow: hidden;
+	padding: 10px;
+	border-bottom: 1px solid #212121;
+}
+.add-exercise-widget .control-bar-group {
+	float: left;
+}
+.add-exercise-widget .control-bar-group.current {
+	background-color: #212121;
+	width: 500px;
+}
+.add-exercise-widget .control-bar-button {
+	display: block;
+	float: left;
+	background-image: url(../images/icons.png);
+	text-indent: -10000px;
+	width: 48px;
+	height: 48px;
+}
+.add-exercise-widget .search-exercises-control .control-bar-button {
+	background-position: 0 -48px;
+}
+.add-exercise-widget .control-bar-group .control-bar-group-toggle {
+	display: none;
+	float: left;
+}
+.add-exercise-widget .control-bar-group.current .control-bar-group-toggle {
+	display: block;
+}
+.add-exercise-widget .exercise-picker-panel {
+	display: none;
+}
+.add-exercise-widget .exercise-picker-panel.current {
+	display: block;
+}
+
+.add-exercise-widget .widget-list > li > a {
+	display: block;
+	text-decoration: none;
+	padding: 5px 15px;
+}
+
+.add-exercise-widget .widget-list > li > a:hover {
+	background-color: #e6c31d;
+	color: #333;
+}

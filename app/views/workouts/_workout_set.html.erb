@@ -1,0 +1,17 @@
+<tr class="fields"> 
+	<td>
+		<%= f.hidden_field :exercise_id %>
+		<span class="exercise-name"><%= f.object.exercise.name if f.object.exercise %></span>
+	</td>
+	<td>
+		<%= f.text_field :magnitude, :size => 4 %>
+		<%= f.collection_select :measurement_unit_id, MeasurementUnit.all, :id, :name %><br />
+	</td>
+	<td>
+		<%= f.label :weight %>
+		<%= f.text_field :weight, :size => 4 %><br />
+	</td>
+	<td>
+		<%= f.hidden_field :_destroy %>
+	</td>
+</tr>

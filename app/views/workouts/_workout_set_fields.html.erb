@@ -1,9 +1,0 @@
-<div class="fields">
-	<%= f.collection_select :exercise_id, Exercise.all, :id, :name %><br />
-	<%= f.text_field :magnitude %>
-	<%= f.collection_select :measurement_unit_id, MeasurementUnit.all, :id, :name %><br /><br />
-	<%= f.label :weight %>
-	<%= f.text_field :weight %><br />
-	<%= f.hidden_field :_destroy %>
-	<%= link_to_function "remove", "remove_fields(this)" %>
-</div>

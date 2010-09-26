@@ -1,0 +1,38 @@
+<div class="add-exercise-widget">
+	<a href="#" class="add-exercise-button">Add Exercise</a>
+	<div class="exercise-picker" style="display:none;">
+		<div class="control-bar">
+			<div class="control-bar-group browse-muscle-group-control current">
+				<a class="control-bar-button" data-tab-panel=".browse-exercises-panel" href="javascript: void(0);">MG</a>
+				<div class="control-bar-group-toggle">
+					<span class="browse-muscle-groups-header">Browsing Exercises</span>
+					<span class="muscle-group-header" style="display:none;">
+						<a href="javascript:void(0);" class="browse-exercise-back-button"><</a>
+						<span class="muscle-group-name"></span>
+					</span>
+				</div>
+			</div>
+			<div class="control-bar-group search-exercises-control">
+				<div class="control-bar-group-toggle">
+					<%= text_field_tag :term, nil, {:placeholder => "Search", :class => "autocomplete", "data-autocomplete-url" => exercises_path()} %>
+				</div>
+				<a class="control-bar-button" data-tab-panel=".search-exercises-panel" href="javascript: void(0);">Search</a>
+			</div>
+		</div>
+		<div class="exercise-picker-frame">
+			<div class="browse-exercises-panel exercise-picker-panel current">
+				<ul class="muscle-groups widget-list">
+					<% MuscleGroup.all.each do |mg| %>
+						<li><%= link_to mg.name, :controller => 'exercises', :action => 'index', :muscle_group => mg.id %></li>
+					<% end %>
+					<li></li>
+				</ul>
+				<ul class="muscle-group-exercises widget-list">
+				</ul>
+			</div>
+			<div class="search-exercises-panel exercise-picker-panel ">
+				<ul class="search-exercises-results-list widget-list"></ul>
+			</div>
+		</div>
+	</div>
+</div>

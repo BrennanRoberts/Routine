@@ -1,0 +1,12 @@
+<% @exercises.each do |exercise| %>
+	<li>
+		<a
+			href="javascript: void(0);"
+			class="add-exercise" 
+			data-exercise-id="<%= exercise.id %>" 
+			data-exercise-name="<%= exercise.name %>"
+		>
+			<%= exercise.name %>
+		</a>
+	</li>
+<% end %>

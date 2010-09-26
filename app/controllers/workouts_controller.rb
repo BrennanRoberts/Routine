@@ -52,7 +52,11 @@ class WorkoutsController < ApplicationController
 	# GET /workouts/new.xml
 	def new
 		@workout = Workout.new
-		1.times { @workout.workout_sets.build }
+		#@workout.save
+		#redirect_to edit_workout_path(@workout)
+		
+		@workout_set = WorkoutSet.new
+		#1.times { @workout.workout_sets.build }
 		respond_to do |format|
 			format.html # new.html.erb
 			format.xml	{ render :xml => @workout }
@@ -67,7 +71,7 @@ class WorkoutsController < ApplicationController
 	# POST /workouts
 	# POST /workouts.xml
 	def create
-		@workout = Workout.new(params[:workout])
+		@workout = current_user.workouts.new(params[:workout])
 
 		respond_to do |format|
 			if @workout.save
@@ -87,7 +91,7 @@ class WorkoutsController < ApplicationController
 
 		respond_to do |format|
 			if @workout.update_attributes(params[:workout])
-				format.html { redirect_to(@workout, :notice => 'Workout was successfully updated.') }
+				format.html { redirect_to( edit_workout_path(@workout), :notice => 'Workout was successfully updated.') }
 				format.xml	{ head :ok }
 			else
 				format.html { render :action => "edit" }

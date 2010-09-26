@@ -2,12 +2,29 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.xml
   def index
-    @exercises = Exercise.all(:include => :muscles)
-
+  	if params[:muscle_group]
+			@exercises = Exercise.search_by_muscle_group(params[:muscle_group], params[:query])
+		else
+		  @exercises = Exercise.where('name LIKE ?', "#{params[:query]}%").includes(:muscles)
+		end
+		
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @exercises }
+     	format.js { render :json => @exercises }
     end
+  end
+  
+  def autocomplete
+  	if params[:muscle_group]
+  		
+  	elsif
+  		@exercises = Exercise.all
+  	end
+  	
+  	#@exercises = @exercise.where('name LIKE ?', "#{params[:term]}%").includes(:muscles)
+  	respond_to do |format|
+	  	format.json { render :json => @exercises }
+	  end
   end
 
   # GET /exercises/1
@@ -15,10 +32,6 @@ class ExercisesController < ApplicationController
   def show
     @exercise = Exercise.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @exercise }
-    end
   end
 
   # GET /exercises/new
