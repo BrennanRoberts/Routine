@@ -64,10 +64,10 @@ nav li a {
 
 
 /* Workout Set table in workout#_form */
-table.workout_sets {
+ol.workout_sets {
 	margin-bottom: 30px;
 }
-table.workout_sets td {
+ol.workout_sets li {
 	padding: 10px;
 }
 /* Add Exercise widget in Workout#_form */
@@ -81,11 +81,14 @@ table.workout_sets td {
 	border-bottom: 1px solid #212121;
 }
 .add-exercise-widget .control-bar-group {
+	display: none;
 	float: left;
 }
 .add-exercise-widget .control-bar-group.current {
-	background-color: #212121;
-	width: 500px;
+	display:block;
+}
+.add-exercise-widget .control-view-buttons {
+	float: right;
 }
 .add-exercise-widget .control-bar-button {
 	display: block;
@@ -95,7 +98,10 @@ table.workout_sets td {
 	width: 48px;
 	height: 48px;
 }
-.add-exercise-widget .search-exercises-control .control-bar-button {
+.add-exercise-widget .control-bar-button.current {
+	display: none;
+}
+.add-exercise-widget .search-exercises-button {
 	background-position: 0 -48px;
 }
 .add-exercise-widget .control-bar-group .control-bar-group-toggle {

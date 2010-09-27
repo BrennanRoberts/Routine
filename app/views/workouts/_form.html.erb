@@ -7,13 +7,13 @@
   <div class="field">
     
   </div>
-  <table class="workout_sets">
+  <ol class="workout_sets">
   <%= f.fields_for :workout_sets do |builder| %>
   	<%= render 'workout_set', :f => builder %>
   <% end %>
-  </table>
+  </ol>
   <%= render "add_exercise_widget" %>
-  <%= new_child_fields_template f, :workout_sets %>
+  <% new_child_fields_template f, :workout_sets %>
   <div class="actions">
     <%= f.submit %>
   </div>

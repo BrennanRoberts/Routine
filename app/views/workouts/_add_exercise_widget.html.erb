@@ -1,22 +1,25 @@
 <div class="add-exercise-widget">
-	<a href="#" class="add-exercise-button">Add Exercise</a>
+	<a href="#" class="open-widget-button">Add Exercise</a>
 	<div class="exercise-picker" style="display:none;">
 		<div class="control-bar">
-			<div class="control-bar-group browse-muscle-group-control current">
-				<a class="control-bar-button" data-tab-panel=".browse-exercises-panel" href="javascript: void(0);">MG</a>
-				<div class="control-bar-group-toggle">
+			<!-- groups -->
+			<div class="control-bar-headers">
+				<div class="control-bar-group browse-exercises-control-header current">
 					<span class="browse-muscle-groups-header">Browsing Exercises</span>
-					<span class="muscle-group-header" style="display:none;">
-						<a href="javascript:void(0);" class="browse-exercise-back-button"><</a>
+					<span class="selected-muscle-group-header" style="display:none;">
+						<a href="javascript:void(0);" class="back-to-browse-muscle-group-button"><</a>
 						<span class="muscle-group-name"></span>
 					</span>
 				</div>
-			</div>
-			<div class="control-bar-group search-exercises-control">
-				<div class="control-bar-group-toggle">
+				<div class="control-bar-group search-exercises-control-header">
 					<%= text_field_tag :term, nil, {:placeholder => "Search", :class => "autocomplete", "data-autocomplete-url" => exercises_path()} %>
 				</div>
-				<a class="control-bar-button" data-tab-panel=".search-exercises-panel" href="javascript: void(0);">Search</a>
+			</div>
+			<!-- end groups -->
+			<!-- view options -->
+			<div class="control-view-buttons">
+				<a class="browse-exercises-button control-bar-button current" data-tab-name="browse-exercises" href="javascript: void(0);">MG</a>
+				<a class="search-exercises-button control-bar-button" data-tab-name="search-exercises" href="javascript: void(0);">Search</a>
 			</div>
 		</div>
 		<div class="exercise-picker-frame">
