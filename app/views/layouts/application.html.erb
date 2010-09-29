@@ -7,31 +7,26 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<header>
-	<div class="wrap">
-		<div id="usernav">
-			<% if current_user %>
-				<%= link_to current_user.username, edit_user_path(:current) %> | 
-				<%= link_to "Logout", logout_path %> |		
-			<% else %>
-				<%= link_to "Register", new_user_path %> | 
-				<%= link_to "Login", login_path %>	|
-			<% end %>
-			<%= link_to 'Muscles', muscles_path %> |
-			<%= link_to 'Muscle Groups', muscle_groups_path %>
-		</div>
-		<hgroup>
-			<h1>Routine</h1>
-			<h2>Workout Application</h2>
-		</hgroup>
-		<nav>
-			<ul>
-				<li><a href="#">Dashboard</a></li>
-				<li><%= link_to 'Workouts', workouts_path %></li>
-				<li><%= link_to 'Exercises', exercises_path %></li>
-			</ul>
-		</nav>
-	</div>
+<header>	
+	<div id="usernav">
+		<% if current_user %>
+			<%= link_to current_user.username, edit_user_path(:current) %> | 
+			<%= link_to "Logout", logout_path %> |		
+		<% else %>
+			<%= link_to "Register", new_user_path %> | 
+			<%= link_to "Login", login_path %>	|
+		<% end %>
+		<%= link_to 'Muscles', muscles_path %> |
+		<%= link_to 'Muscle Groups', muscle_groups_path %>
+	</div>	
+	<h1>Routine</h1>
+	<nav>
+		<ul>
+			<li><a href="#">Dashboard</a></li>
+			<li><%= link_to 'Workouts', workouts_path %></li>
+			<li><%= link_to 'Exercises', exercises_path %></li>
+		</ul>
+	</nav>
 </header>
 <div id="content" class="wrap">
 	<%= yield %>

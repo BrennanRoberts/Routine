@@ -1,18 +1,17 @@
 <%= form_for(@workout) do |f| %>
-  <h1>
-  	Workout for 
-	  <%= f.date_select :date %>
-    <%= f.check_box :complete %>
-	</h1>
-  <div class="field">
-    
+	<div class="border-header">
+	  <h1>New Workout</h1>
+		<div class="right" style="display: none;">
+			<%= f.date_select :date %>
+		  <%= f.check_box :complete  %>
+	  </div>
   </div>
   <ol class="workout_sets">
   <%= f.fields_for :workout_sets do |builder| %>
   	<%= render 'workout_set', :f => builder %>
   <% end %>
   </ol>
-  <%= render "add_exercise_widget" %>
+  <% #render "add_exercise_widget" %>
   <% new_child_fields_template f, :workout_sets %>
   <div class="actions">
     <%= f.submit %>

@@ -1,17 +1,19 @@
-<li class="fields"> 
+<li class="fields">
+	<div class="dark-bg">
 	<span>
 		<%= f.hidden_field :exercise_id %>
 		<span class="exercise-name"><%= f.object.exercise.name if f.object.exercise %></span>
 	</span>
-	<span>
-		<%= f.text_field :magnitude, :size => 4 %>
-		<%= f.collection_select :measurement_unit_id, MeasurementUnit.all, :id, :name %>
+	<span class="right">
+		<span class="border-field">
+			<span><%= f.text_field :magnitude, :size => 3 %></span>
+			<span class="magnitude-label">x</span>
+		</span>
+		<span class="border-field">
+			<span><%= f.text_field :weight, :size => 3 %></span>
+			<span class="weight-label">lbs</span>
+		</span>
+		<span><%= f.hidden_field :_destroy %></span>
 	</span>
-	<span>
-		<%= f.label :weight %>
-		<%= f.text_field :weight, :size => 4 %>
-	</span>
-	<span>
-		<%= f.hidden_field :_destroy %>
-	</span>
+	</div>
 </li>

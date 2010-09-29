@@ -62,6 +62,12 @@ $(function() {
 	  	ep.show()
 	  });
   	
+  	//close widget
+  	$('.min-widget', control_bar).click(function(){
+  		ep.hide();
+  		w.find('.open-widget-button').show();
+  	});
+  	
   	//setup top controls
 		$('.control-bar .control-bar-button', ep).click(function(){
 			var jthis = $(this);

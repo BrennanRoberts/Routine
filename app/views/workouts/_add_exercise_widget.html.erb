@@ -2,6 +2,9 @@
 	<a href="#" class="open-widget-button">Add Exercise</a>
 	<div class="exercise-picker" style="display:none;">
 		<div class="control-bar">
+			<a class="min-widget" href="javascript: void(0);">
+				Close
+			</a>
 			<!-- groups -->
 			<div class="control-bar-headers">
 				<div class="control-bar-group browse-exercises-control-header current">
@@ -12,7 +15,7 @@
 					</span>
 				</div>
 				<div class="control-bar-group search-exercises-control-header">
-					<%= text_field_tag :term, nil, {:placeholder => "Search", :class => "autocomplete", "data-autocomplete-url" => exercises_path()} %>
+					<%= text_field_tag :term, nil, {:autocomplete => "off", :placeholder => "Search", :class => "autocomplete", "data-autocomplete-url" => exercises_path()} %>
 				</div>
 			</div>
 			<!-- end groups -->
@@ -21,6 +24,7 @@
 				<a class="browse-exercises-button control-bar-button current" data-tab-name="browse-exercises" href="javascript: void(0);">MG</a>
 				<a class="search-exercises-button control-bar-button" data-tab-name="search-exercises" href="javascript: void(0);">Search</a>
 			</div>
+			<div class="clearfix"></div>
 		</div>
 		<div class="exercise-picker-frame">
 			<div class="browse-exercises-panel exercise-picker-panel current">
