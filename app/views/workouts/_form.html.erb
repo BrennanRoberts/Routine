@@ -11,7 +11,7 @@
   	<%= render 'workout_set', :f => builder %>
   <% end %>
   </ol>
-  <% #render "add_exercise_widget" %>
+  <%= render "add_exercise_widget" %>
   <% new_child_fields_template f, :workout_sets %>
   <div class="actions">
     <%= f.submit %>

@@ -6,7 +6,6 @@ $(function() {
 	
 
   $('form a.add_child').click(function() {
-  	console.log('deprecated? I think not.');
     var association = $(this).attr('data-association');
     var template = $('#' + association + '_fields_template').html();
     var regexp = new RegExp('new_' + association, 'g');
@@ -16,12 +15,13 @@ $(function() {
     return false;
   });
 
-  $('form a.remove_child').live('click', function() {
-    var hidden_field = $(this).prev('input[type=hidden]')[0];
+	//remove a workout_set from a workout
+  $('ol.workout_sets li a.remove-workout-set').live('click', function() {
+    var hidden_field = $(this).next('input[type=hidden]')[0];
     if(hidden_field) {
       hidden_field.value = '1';
     }
-    $(this).parents('.fields').hide();
+    $(this).closest('li').hide();
     return false;
   });
   
@@ -93,7 +93,6 @@ $(function() {
 	  //setup browse muscle group rows
 	  muscle_groups_list.find('li a').click(function() {
 	  	var url = $(this).attr('href');
-	  	console.log(cache[url]);
 	  	
 	  	function callback(data) {
 	  		muscle_group_exercises_list.html(exercise_list_helper(data));
@@ -102,7 +101,6 @@ $(function() {
 	  	}
 	  	
 	  	if (cache[url] != undefined ) { 
-	  		console.log('used cache'); 
 	  		callback(cache[url]); 
 	  	}	else {
 		  	$.getJSON(url, null, function(data) {
@@ -135,7 +133,6 @@ $(function() {
 			}
 			
 			if (cache[url] != undefined ) { 
-	  		console.log('used cache'); 
 	  		callback(cache[url]); 
 	  	}	else {
 		  	$.getJSON(url, null, function(data) {

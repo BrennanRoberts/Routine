@@ -9,7 +9,18 @@ body {
 ul { list-style: none; }
 a { color: #fff; }
 
-input[type=text] { border: none; background-color: transparent; outline: none; color: #fff; font-family: Sansation; text-align: right; }
+input[type=text] { 
+	border: none; 
+	background-color: transparent; 
+	outline: none; 
+	color: #fff; 
+	font-family: Sansation; 
+	font-weight: lighter; 
+	text-align: right; 
+	padding: 0; 
+	margin: 0; 
+	font-size: 26px;
+}
 
 td { padding: 10px; }
 
@@ -106,22 +117,70 @@ ol.workout_sets {
 	list-style: decimal;
 }
 ol.workout_sets li {
-	
-	padding: 12px 20px 10px 4px;
+	height: 46px;
+	padding: 0 20px 0 4px;
 	color: #595959;
-	border-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	position: relative;
 }
 ol.workout_sets li:hover {
 	background-color: #212121;
-
+}
+ol.workout_sets li .left-tab {
+	background-color: #212121;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	position: absolute;
+	left: -48px;
+	top: 0px;
+	width: 48px;
+	height: 46px;
+	visibility: hidden;
+}
+ol.workout_sets li:hover .left-tab {
+	visibility: visible;
+}
+ol.workout_sets li .left-tab a.remove-workout-set {
+	display: block;
+	width: 28px;
+	height: 28px;
+	background: url(../images/remove-icon.png) center center no-repeat;
+	text-indent: -10000px;
+	border-radius: 3px;
+	border: 3px solid #353535;
+	margin: 6px;
+}
+ol.workout_sets li .left-tab a.remove-workout-set:hover {
+	background-color: #353535;
+	color: #2c2c2c;
 }
 .exercise-name {
-	color: #fff;	
+	display: block;
+	padding: 10px 0;	
+	color: #fff;
 }
 .magnitude-label,
 .weight-label {
 	font-family: "Lobster 1.3";
 	color: #595959;	
+	font-size: 23px;
+	line-height: 1;
+}
+ol.workout_sets li .border-field {
+	height: 28px;
+	border-radius: 5px;
+	margin: 6px;
+	padding: 0 6px;
+	border: 3px solid transparent;
+	display: block;
+	float: left;
+}
+ol.workout_sets li:hover .border-field {
+	border-color: #3e3e3e;
+}
+ol.workout_sets li:hover .border-field:hover {
+	background-color: #3e3e3e;
 }
 /* Add Exercise widget in Workout#_form */
 .add-exercise-widget {
