@@ -8,16 +8,16 @@
 				</a>
 			</div>
 			<!-- groups -->
-			<div class="control-bar-headers">
-				<div class="control-bar-group browse-exercises-control-header current">
-					<span class="browse-muscle-groups-header">Browsing Exercises</span>
-					<span class="selected-muscle-group-header" style="display:none;">
-						<a href="javascript:void(0);" class="back-to-browse-muscle-group-button"><</a>
-						<span class="muscle-group-name"></span>
-					</span>
+			<div class="control-headers">
+				<div class="control-header browse-exercises-control-header current">
+					<span>Select a Muscle Group</span>
 				</div>
-				<div class="control-bar-group search-exercises-control-header">
-					<%= text_field_tag :term, nil, {:autocomplete => "off", :placeholder => "Search", :class => "autocomplete", "data-autocomplete-url" => exercises_path()} %>
+				<div class="control-header selected-muscle-group-control-header">
+					<span class="muscle-group-name"></span> Exercises
+					<a href="javascript:void(0);" class="back-to-browse-muscle-group-button clear">&lt;</a>
+				</div>
+				<div class="control-header search-exercises-control-header">
+					<%= text_field_tag :term, nil, {:autocomplete => "off", :placeholder => "Search", :class => "autocomplete search-field", "data-autocomplete-url" => exercises_path() } %>
 				</div>
 			</div>
 			<!-- end groups -->
@@ -36,6 +36,8 @@
 					<% end %>
 					<li></li>
 				</ul>
+			</div>
+			<div class="selected-muscle-group-panel exercise-picker-panel">
 				<ul class="muscle-group-exercises widget-list">
 				</ul>
 			</div>

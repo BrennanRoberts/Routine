@@ -1,23 +1,22 @@
 <li>
 	<%= f.hidden_field :exercise_id %>
-	<span class="right">
+	<a class="remove-workout-set" href="javascript: void(0);"></a>
+	<%= f.hidden_field :_destroy %>
+	<span class="details">
 		<span class="muscles">
 		<% if f.object.exercise %>
 			<%= get_muscle_groups(f.object.exercise)  %> 
 		<% end %>
 		</span>
 		<span class="round-rect field-wrap">
-			<span><%= f.text_field :magnitude, { :size => 3, :autocomplete => "off" } %></span>
-			<span class="magnitude-label">x</span>
-		</span>
-		<span class="round-rect field-wrap">
 			<span><%= f.text_field :weight, { :size => 3, :autocomplete => "off" } %></span>
 			<span class="weight-label">lbs</span>
 		</span>
+		<span class="round-rect field-wrap">
+			<span><%= f.text_field :magnitude, { :size => 3, :autocomplete => "off" } %></span>
+			<span class="magnitude-label">x</span>
+		</span>
 	</span>
+	
 	<span class="exercise-name"><%= f.object.exercise.name if f.object.exercise %></span>
-	<div class="left-tab">
-		<a class="remove-workout-set" href="javascript: void(0);"></a>
-		<%= f.hidden_field :_destroy %>
-	</div>
 </li>

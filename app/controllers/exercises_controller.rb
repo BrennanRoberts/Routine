@@ -31,7 +31,6 @@ class ExercisesController < ApplicationController
   # GET /exercises/1.xml
   def show
     @exercise = Exercise.find(params[:id])
-
   end
 
   # GET /exercises/new
@@ -57,7 +56,7 @@ class ExercisesController < ApplicationController
 
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to(@exercise, :notice => 'Exercise was successfully created.') }
+        format.html { redirect_to(exercises_path, :notice => 'Exercise was successfully created.') }
         format.xml  { render :xml => @exercise, :status => :created, :location => @exercise }
       else
         format.html { render :action => "new" }

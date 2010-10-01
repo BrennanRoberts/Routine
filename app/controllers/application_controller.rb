@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user
 
-	before_filter :require_login
+	#before_filter :require_login
 
 	private
 	

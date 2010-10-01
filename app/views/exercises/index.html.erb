@@ -1,25 +1,14 @@
 <h1>Listing exercises</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Muscles</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul>
 <% @exercises.each do |exercise| %>
-  <tr>
-    <td><%= exercise.name %></td>
-    <td><% exercise.muscles.each do |muscle| %><%= muscle.name %>, <% end %></td>
-    <td><%= link_to 'Show', exercise %></td>
-    <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
-    <td><%= link_to 'Destroy', exercise, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <li>
+    <%= link_to exercise.name, edit_exercise_path(exercise) %>
+    <%= get_muscle_groups(exercise)  %>
+    <%= link_to 'x', exercise, :confirm => 'Are you sure?', :method => :delete %></td>
+  </li>
 <% end %>
-</table>
-
+</ul>
 <br />
 
 <%= link_to 'New Exercise', new_exercise_path %>
