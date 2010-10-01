@@ -1,10 +1,16 @@
-<li class="fields">
+<li>
+	<%= f.hidden_field :exercise_id %>
 	<span class="right">
-		<span class="border-field">
+		<span class="muscles">
+		<% if f.object.exercise %>
+			<%= get_muscle_groups(f.object.exercise)  %> 
+		<% end %>
+		</span>
+		<span class="round-rect field-wrap">
 			<span><%= f.text_field :magnitude, { :size => 3, :autocomplete => "off" } %></span>
 			<span class="magnitude-label">x</span>
 		</span>
-		<span class="border-field">
+		<span class="round-rect field-wrap">
 			<span><%= f.text_field :weight, { :size => 3, :autocomplete => "off" } %></span>
 			<span class="weight-label">lbs</span>
 		</span>

@@ -92,12 +92,17 @@ $(function() {
 	  
 	  //setup browse muscle group rows
 	  muscle_groups_list.find('li a').click(function() {
-	  	var url = $(this).attr('href');
+	  	var jthis = $(this);
+	  	var url = jthis.attr('href');
 	  	
 	  	function callback(data) {
 	  		muscle_group_exercises_list.html(exercise_list_helper(data));
 				muscle_groups_list.hide();
 				muscle_group_exercises_list.show();
+
+				//change title
+		  	selected_muscle_group_name.html(jthis.html());	
+		  	namenext($('.selected-muscle-group-header'));
 	  	}
 	  	
 	  	if (cache[url] != undefined ) { 
@@ -109,10 +114,7 @@ $(function() {
 				});
 			}
 	  	
-	  	//change title
-	  	selected_muscle_group_name.html($(this).html());
 	  	
-	  	namenext($('.selected-muscle-group-header'));
 	  	
 	  	return false;
 	  });
@@ -148,7 +150,8 @@ $(function() {
 		    		regexp = new RegExp('new_workout_sets', 'g'),
 		    		new_id = new Date().getTime(),
 		    		new_content = $(template.replace(regexp, new_id));
-		    		
+		    	
+		    new_content.find('#workout_workout_sets_attributes_' + new_id + '_exercise_id').val(id);
 				new_content.find('.exercise-name').html(name);
 		    workout_set_list.append(new_content);
 	  	}

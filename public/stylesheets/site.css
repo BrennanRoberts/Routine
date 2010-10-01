@@ -20,11 +20,25 @@ input[type=text] {
 	padding: 0; 
 	margin: 0; 
 	font-size: 26px;
+	line-height: 1.25;
 }
 
 td { padding: 10px; }
 
 .hidden { display: none; }
+
+/*---------------------------------------------------------------------------------------*/
+/* Muscle Colors */
+/*---------------------------------------------------------------------------------------*/
+.abdomen { border-color: #95cce9; }
+.arm { border-color: #bb186e; }
+.back { border-color: #5f3986; }
+.chest { border-color: #ce7430; }
+.forearm { border-color: #ffc600;}
+.leg { border-color: #9eb239; }
+.shoulder { border-color: #d44702; }
+.thigh { border-color: #49a075; }
+
 
 .left {float: left;}
 .right {float:right;}
@@ -111,14 +125,17 @@ nav li a {
 }
 
 
+/*---------------------------------------------------------------------------------------*/
 /* Workout Set table in workout#_form */
+/*---------------------------------------------------------------------------------------*/
+
 ol.workout_sets {
 	margin: 10px 0 30px;
 	list-style: decimal;
 }
 ol.workout_sets li {
 	height: 46px;
-	padding: 0 20px 0 4px;
+	padding: 0 6px 0 4px;
 	color: #595959;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
@@ -126,6 +143,16 @@ ol.workout_sets li {
 }
 ol.workout_sets li:hover {
 	background-color: #212121;
+}
+ol.workout_sets li .round-rect { 
+	display: block;
+	float: left;
+	height: 28px;
+	margin: 6px 0px 6px 6px;
+	padding: 0 10px;
+	border-radius: 5px;
+	border-width: 3px;
+	border-style: solid;
 }
 ol.workout_sets li .left-tab {
 	background-color: #212121;
@@ -155,10 +182,41 @@ ol.workout_sets li .left-tab a.remove-workout-set:hover {
 	background-color: #353535;
 	color: #2c2c2c;
 }
-.exercise-name {
+ol.workout_sets li .exercise-name {
 	display: block;
-	padding: 10px 0;	
+	padding: 12px 0 0;	
+	color: #d2d2d2;
+}
+ol.workout_sets li:hover .exercise-name {	
 	color: #fff;
+}
+.muscles {
+	display: block;
+	float: left;
+}
+ol.workout_sets li .muscle-bubble {
+	display: none;
+}
+ol.workout_sets li:hover .muscle-bubble {
+	display: block;
+}
+ol.workout_sets li .muscle-bubble .muscle-bubble-inner {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #fff;
+	display: none;
+}
+ol.workout_sets li .muscle-bubble:hover .muscle-bubble-inner {
+	display: inline;
+}
+ol.workout_sets li .field-wrap {
+	border-color: transparent;
+}
+ol.workout_sets li:hover .field-wrap {
+	border-color: #3e3e3e;
+}
+ol.workout_sets li:hover .field-wrap:hover {
+	background-color: #3e3e3e;
 }
 .magnitude-label,
 .weight-label {
@@ -167,34 +225,42 @@ ol.workout_sets li .left-tab a.remove-workout-set:hover {
 	font-size: 23px;
 	line-height: 1;
 }
-ol.workout_sets li .border-field {
-	height: 28px;
-	border-radius: 5px;
-	margin: 6px;
-	padding: 0 6px;
-	border: 3px solid transparent;
-	display: block;
-	float: left;
-}
-ol.workout_sets li:hover .border-field {
-	border-color: #3e3e3e;
-}
-ol.workout_sets li:hover .border-field:hover {
-	background-color: #3e3e3e;
-}
+
+/*---------------------------------------------------------------------------------------*/
 /* Add Exercise widget in Workout#_form */
+/*---------------------------------------------------------------------------------------*/
 .add-exercise-widget {
-	background-color: #2c2c2c;
+	background-color: #212121;
+	border-radius: 8px;
 }
 .add-exercise-widget .control-bar {
 	padding: 10px;
-	border-bottom: 1px solid #212121;
 	position: relative;
 }
-.add-exercise-widget .min-widget {
+.add-exercise-widget .left-tab {
 	position: absolute; 
-	left: -100px; 
-	width: 100px;
+	left: -48px; 
+	width: 48px;
+	height: 48px;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	text-indent: -10000px;
+	background-color: #212121;
+}
+.add-exercise-widget .left-tab .min-widget {
+	display: block;
+	width: 28px;
+	height: 28px;
+	background: url(../images/min-icon.png) center center no-repeat;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	margin: 6px 0 0 6px;
+}
+.add-exercise-widget:hover .left-tab .min-widget {
+	border-color: #353535;
+}
+.add-exercise-widget .left-tab .min-widget:hover {
+	background-color: #353535;
 }
 .add-exercise-widget .control-bar-group {
 	display: none;
@@ -236,11 +302,31 @@ ol.workout_sets li:hover .border-field:hover {
 
 .add-exercise-widget .widget-list > li > a {
 	display: block;
+	height: 46px;
+	color: #595959;
+	border-radius: 8px;
+	position: relative;
 	text-decoration: none;
-	padding: 5px 15px;
+	line-height: 1.9;
 }
-
+.add-exercise-widget .widget-list {
+	overflow: hidden;
+	margin: 12px;
+}
 .add-exercise-widget .widget-list > li > a:hover {
 	background-color: #e6c31d;
 	color: #333;
+}
+.add-exercise-widget .widget-list.muscle-groups > li > a {
+	width: 32%;
+	float: left;
+	padding: 3px;
+	border-width: 0;
+	border-style:	solid;
+}
+.add-exercise-widget .widget-list.muscle-groups > li > a:hover {
+	background-color: transparent;
+	padding: 0;
+	border-width: 3px;
+	color: #fff;
 }
