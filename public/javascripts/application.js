@@ -88,8 +88,7 @@ $(function() {
   	//setup add exercise rows
   	$('.add-exercise', ep).live('click', function() {
 	    var ex_id = $(this).attr('data-exercise-id');
-	    var ex_name = $(this).html();
-    	that.select_exercise(ex_id, ex_name);
+    	that.select_exercise(2, ex_id);
 	    return false;
 	  });
 	  
@@ -143,7 +142,9 @@ $(function() {
 		});
 	  
   	that = {
-	  	select_exercise: function(id, name){
+	  	select_exercise: function(workout_id, exercise_id) {
+	  		$.getScript('/workout_sets/new.js?workout_id=' + workout_id + '&exercise_id=' + exercise_id );
+/*
 	  		var template = $('#workout_sets_fields_template').html(),
 		    		regexp = new RegExp('new_workout_sets', 'g'),
 		    		new_id = new Date().getTime(),
@@ -152,6 +153,7 @@ $(function() {
 		    new_content.find('#workout_workout_sets_attributes_' + new_id + '_exercise_id').val(id);
 				new_content.find('.exercise-name').html(name);
 		    workout_set_list.append(new_content);
+*/
 	  	},
 	  	switch_view: function(mode){
 	  		console.log(mode);

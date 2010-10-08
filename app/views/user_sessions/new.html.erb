@@ -1,17 +1,20 @@
-<h1>Login</h1>
-
-<%= form_for @user_session do |f| %>
-	<%= render "shared/error_messages", :target => @user_session %>
-	
-	<div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-  	<%= f.label :password %><br />
-  	<%= f.password_field :password  %>
-  </div>
-	<div class="field">
-  	<%= f.submit "Login" %><br />
-  </div>
-<% end %>
+<div id="login-wrap">
+	<%= form_for @user_session do |f| %>
+		<% if @user_session.errors.count > 0 %>
+			<div class="error">
+				Wrong username / password
+			</div>
+		<% end %>
+		<div class="field">
+	    <%= f.label :username %><br />
+	    <%= f.text_field :username, :size => 26 %>
+	  </div>
+	  <div class="field">
+	  	<%= f.label :password %><br />
+	  	<%= f.password_field :password, :size => 26  %>
+	  </div>
+		<div class="field">
+	  	<%= f.submit "Login" %><br />
+	  </div>
+	<% end %>
+</div>

@@ -1,8 +1,6 @@
 Routine::Application.routes.draw do
   resources :users
-
   resources :muscle_groups
-
   resources :muscles
 
 	resources :workouts do
@@ -18,7 +16,6 @@ Routine::Application.routes.draw do
 	end
 	
 	resources :workout_sets
-	
 	resources :user_sessions
 	
 	match "login" => "user_sessions#new"

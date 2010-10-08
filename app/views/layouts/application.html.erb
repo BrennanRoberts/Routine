@@ -12,9 +12,6 @@
 		<% if current_user %>
 			<%= link_to current_user.username, edit_user_path(:current) %> | 
 			<%= link_to "Logout", logout_path %> |		
-		<% else %>
-			<%= link_to "Register", new_user_path %> | 
-			<%= link_to "Login", login_path %>	|
 		<% end %>
 		<%= link_to 'Muscles', muscles_path %> |
 		<%= link_to 'Muscle Groups', muscle_groups_path %>
@@ -30,9 +27,6 @@
 </header>
 <div id="content" class="wrap">
 	<%= yield %>
-</div>
-<div id="jstemplates">
-  <%= yield :jstemplates %>
 </div>
 </body>
 </html>

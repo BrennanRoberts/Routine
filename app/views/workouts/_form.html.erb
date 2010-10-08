@@ -7,12 +7,14 @@
 	  </div>
   </div>
   <ol class="workout_sets">
-  <%= f.fields_for :workout_sets do |builder| %>
-  	<%= render 'workout_set', :f => builder %>
-  <% end %>
+  <% #f.fields_for :workout_sets do |builder| %>
+  	<% #render 'workout_set', {"@i" => builder } %>
+  <% #end %>
+	<% @workout.workout_sets.each_with_index do |workout_set , i| %>
+		<%= render workout_set, { :i => i.to_s } %>
+	<% end %>
   </ol>
   <%= render "add_exercise_widget" %>
-  <% new_child_fields_template f, :workout_sets %>
   <div class="actions">
     <%= f.submit %>
   </div>
