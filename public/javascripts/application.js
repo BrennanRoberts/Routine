@@ -1,9 +1,17 @@
+var utility = {
+	update_workout_set_order_values: function(){
+		$('ol.workout_sets').children().each(function(i, el){
+			el = $(el);
+			var pos = el.prevAll().size();
+			el.find('.workout_set_position_field').val(pos);
+		});
+	}
+};
+
 $(function() {
 	jQuery.ajaxSetup({
 		'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 	});
-	
-	
 
   $('form a.add_child').click(function() {
     var association = $(this).attr('data-association');
@@ -14,6 +22,15 @@ $(function() {
     $('.'+ association).append(template.replace(regexp, new_id));
     return false;
   });
+
+	//sort workout_set rows
+	$('ol.workout_sets').sortable({
+		axis: 'y',
+		handle: '.exercise-name',
+		update: utility.update_workout_set_order_values
+	});
+	
+
 
 	//remove a workout_set from a workout
   $('ol.workout_sets li a.remove-workout-set').live('click', function() {

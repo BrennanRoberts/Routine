@@ -1,1 +1,2 @@
 $("ol.workout_sets").append("<%=raw escape_javascript(render('workout_set', {:workout_set => @workout_set , :i => Time.now.to_i.to_s })) %>");
+utility.update_workout_set_order_values();

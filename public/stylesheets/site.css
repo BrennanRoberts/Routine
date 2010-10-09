@@ -17,7 +17,7 @@ input[type=text], input[type=password] {
 
 input[type=button], input[type=submit] {
 	border-radius: 5px;
-	border: 3px solid #ffc600;
+	border: 2px solid #ffc600;
 	color: #fff;
 	font-weight: 100;
 	font-family: "Helvetica";
@@ -239,6 +239,7 @@ ol.workout_sets li .exercise-name {
 	display: block;
 	padding: 12px 0 0;	
 	color: #d2d2d2;
+	cursor: move;
 }
 ol.workout_sets li:hover .exercise-name {	
 	color: #fff;

@@ -19,5 +19,6 @@
 		</span>
 		<span class="exercise-name"><%= workout_set.exercise.name %></span>
 		<%= f.hidden_field :exercise_id %>
+		<%= f.hidden_field :position, :class => "workout_set_position_field" %>
 	</li>
 <% end %>
