@@ -4,14 +4,14 @@ Routine::Application.routes.draw do
   resources :muscles
 
 	resources :workouts do
-	  collection do
-	    get 'upcoming', 'completed', 'incomplete'
-	  end
+		member do
+			put :complete
+		end
 	end
 
 	resources :exercises do
 		collection do
-			get 'autocomplete'
+			get :autocomplete
 		end	
 	end
 	

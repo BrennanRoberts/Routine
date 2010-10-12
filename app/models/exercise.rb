@@ -4,10 +4,7 @@ class Exercise < ActiveRecord::Base
 	has_many :workouts, :through => :workout_sets
 	validates_presence_of :name
 	
-	def self.search_by_muscle_group(mg_id, query)
-		query ||= ''
-		mg = MuscleGroup.find(mg_id)
-  	muscles = mg.muscles
-  	muscles.collect { |m| m.exercises.where('name LIKE ?', "#{query}%") }.flatten.uniq
+	def muscle_groups
+		MuscleGroup.joins(:muscles => :exercises).where(:exercises => {:id => id})
 	end
 end

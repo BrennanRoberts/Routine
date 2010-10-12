@@ -4,19 +4,14 @@ class Workout < ActiveRecord::Base
 	has_many :exercises, :through => :workout_sets
 	accepts_nested_attributes_for :workout_sets, :allow_destroy => true
 	
-	def self.upcoming
-		where("date >= ?", Date.today).order('date asc')		
-	end
-	
-	def self.completed
-		find_all_by_complete(true)
-	end
-	
-	def self.forgotten
-		where("complete = ? and date < ?", false, Date.today)
-	end
+	scope :future, where("workouts.date > ?", Date.today).order('date desc')		
+	scope :past, where("workouts.date < ?", Date.today).order('date asc')
+	scope :today, where(:date => Date.today)
+	scope :complete, where(:complete => true)
+	scope :incomplete, where(:complete => false)
+	scope :forgotten, where("workouts.complete = ? and date < ?", false, Date.today)
 	
 	def muscle_groups 
-		exercises.collect { |e| e.muscles.collect { |m| m.muscle_group.name } } .flatten.uniq
+		MuscleGroup.joins(:muscles => [:exercises => :workouts]).where(:workouts => {:id => id}).uniq
 	end
 end

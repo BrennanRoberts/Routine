@@ -1,18 +1,1 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @muscle_group.name %>
-</p>
-<p>
-	<b>Muscles</b>
-	<ul>
-		<% @muscle_group.muscles.each do |muscle| %>
-			<li><%= link_to muscle.name, muscle %></li>
-		<% end %>
-	</ul>
-</p>
-
-
-<%= link_to 'Edit', edit_muscle_group_path(@muscle_group) %> |
-<%= link_to 'Back', muscle_groups_path %>
+<%= render :partial => "shared/add_exercise_widget_exercise_item", :collection => @muscle_group.exercises, :as => :exercise %>

@@ -2,14 +2,10 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.xml
   def index
-  	if params[:muscle_group]
-			@exercises = Exercise.search_by_muscle_group(params[:muscle_group], params[:query])
-		else
-		  @exercises = Exercise.where('name LIKE ?', "#{params[:query]}%").includes(:muscles)
-		end
+	  @exercises = Exercise.where('name LIKE ?', "#{params[:query]}%")
 		
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render :layout => false }
      	format.js { render :json => @exercises }
     end
   end

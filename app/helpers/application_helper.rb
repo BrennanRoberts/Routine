@@ -15,9 +15,7 @@ module ApplicationHelper
 	  f.hidden_field(:_destroy) + link_to(name, "javascript:void(0)", :class => "remove_child")
 	end
 	
-	def get_muscle_groups(exercise)
-		mgs = exercise.muscles.collect { |muscle| muscle.muscle_group }
-		mgs.uniq!
+	def get_muscle_group_bubbles(mgs)
 		html = ""
 		mgs.each do |mg|
 			html << muscle_group_tag(mg)

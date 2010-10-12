@@ -1,12 +1,13 @@
 <div class="add-exercise-widget">
 	<a href="#" class="open-widget-button">Add Exercise</a>
 	<div class="exercise-picker" style="display:none;">
+		<div class="left-tab">
+			<a class="min-widget" href="javascript: void(0);">
+				Close
+			</a>
+		</div>
 		<div class="control-bar">
-			<div class="left-tab">
-				<a class="min-widget" href="javascript: void(0);">
-					Close
-				</a>
-			</div>
+			
 			<!-- groups -->
 			<div class="control-headers">
 				<div class="control-header browse-exercises-control-header current">
@@ -26,13 +27,12 @@
 				<a class="browse-exercises-button control-bar-button current" data-tab-name="browse-exercises" href="javascript: void(0);">MG</a>
 				<a class="search-exercises-button control-bar-button" data-tab-name="search-exercises" href="javascript: void(0);">Search</a>
 			</div>
-			<div class="clearfix"></div>
 		</div>
 		<div class="exercise-picker-frame">
 			<div class="browse-exercises-panel exercise-picker-panel current">
 				<ul class="muscle-groups widget-list">
 					<% MuscleGroup.all.each do |mg| %>
-						<li><%= link_to content_tag(:span, mg.name, :class => "muscle-group-name"), {:controller => 'exercises', :action => 'index', :muscle_group => mg.id }, :class => mg.name.downcase %></li>
+						<li><%= link_to content_tag(:span, mg.name, :class => "muscle-group-name"), mg, :class => mg.name.downcase %></li>
 					<% end %>
 					<li></li>
 				</ul>

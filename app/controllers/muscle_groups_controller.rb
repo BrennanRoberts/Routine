@@ -16,7 +16,7 @@ class MuscleGroupsController < ApplicationController
     @muscle_group = MuscleGroup.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => false }
       format.xml  { render :xml => @muscle_group }
     end
   end

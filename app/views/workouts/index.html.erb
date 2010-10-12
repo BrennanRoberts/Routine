@@ -1,20 +1,21 @@
-<h1>Listing Workouts</h1> 
-<%= workout_subnav %>
-<table>
-<% @workouts.each do |workout| %>
-  <tr>
-    <td><%= workout.complete ? "Complete" : "Incomplete" %></td>
-    <td><%= link_to workout.date, edit_workout_path(workout) %></td>
-    <td>
-    <% workout.muscle_groups.each do |mg| %>
-    	<span><%= mg %></span>
-    <% end %>
-    </td>
-    <td><%= link_to 'Destroy', workout, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div class="border-header">
+	<h1>Upcoming</h1>
+</div>
+<ul class="workouts std-list">
+	<% if @upcoming_workouts.length > 0 %>
+		<%= render :partial => "workout", :collection => @upcoming_workouts %>
+	<% else %>
+		<p>You have no upcoming workouts.  Get to work!</p>
+	<% end %>
+</ul>
 
+
+<div class="border-header">
+	<h1>Logs</h1>
+</div>
+<ul class="workouts std-list">
+	<%= render :partial => "workout", :collection => @past_workouts %>
+</ul>
 <br />
 
 <%= link_to 'New Workout', new_workout_path %>

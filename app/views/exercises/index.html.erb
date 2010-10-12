@@ -1,14 +1,1 @@
-<h1>Listing exercises</h1>
-
-<ul>
-<% @exercises.each do |exercise| %>
-  <li>
-    <%= link_to exercise.name, edit_exercise_path(exercise) %>
-    <%= get_muscle_groups(exercise)  %>
-    <%= link_to 'x', exercise, :confirm => 'Are you sure?', :method => :delete %></td>
-  </li>
-<% end %>
-</ul>
-<br />
-
-<%= link_to 'New Exercise', new_exercise_path %>
+<%= render :partial => "shared/add_exercise_widget_exercise_item", :collection => @exercises, :as => :exercise %>

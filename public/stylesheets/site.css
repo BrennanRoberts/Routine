@@ -159,26 +159,129 @@ nav li a {
 }
 
 /*---------------------------------------------------------------------------------------*/
-/* Workout Set table in workout#_form */
+/* Standard List Styles
 /*---------------------------------------------------------------------------------------*/
-
-ol.workout_sets {
-	margin: 10px 0;
-	list-style: decimal;
+.std-list {
+	margin: 10px 0 40px;
 }
-ol.workout_sets li {
+.std-list li {
 	height: 46px;
-	margin-left: -52px;
-	color: #595959;
+	padding: 0 6px;
+	line-height: 50px;
 	border-radius: 8px;
 	border-radius: 8px;
 	position: relative;
 }
-ol.workout_sets li:hover {
+.std-list li:hover {
 	background-color: #212121;
-	list-style: none;
 }
-ol.workout_sets li input[type=text] {
+.std-list li .index {
+	color: #595959;
+	display: block;
+	position: absolute;
+	left: -10px;
+	width: 50px;
+	text-align: right;
+}
+.std-list li:hover .index span {
+	visibility: hidden;
+}
+.std-list li .round-rect { 
+	display: block;
+	float: left;
+	height: 28px;
+	margin: 6px 0px 6px 6px;
+	padding: 0 10px;
+	border-radius: 5px;
+	border-width: 3px;
+	border-style: solid;
+	line-height: 26px;
+}
+.std-list li .details {
+	float: right;
+}
+.muscles {
+	display: block;
+	float: left;
+}
+.std-list li .muscle-bubble {
+	display: block;
+	opacity: .4;
+}
+.std-list li:hover .muscle-bubble {
+	display: block;
+	opacity: 1;
+}
+.std-list li .muscle-bubble .muscle-bubble-inner {
+	font-size: 14px;
+	text-transform: uppercase;
+	display: none;
+}
+.std-list li .muscle-bubble:hover .muscle-bubble-inner {
+	display: inline;
+}
+ul.workout_sets li .field-wrap {
+	border-color: transparent;
+	line-height: 25px;
+}
+ul.workout_sets li:hover .field-wrap {
+	border-color: #3e3e3e;
+}
+ul.workout_sets li:hover .field-wrap:hover {
+	background-color: #3e3e3e;
+}
+/*---------------------------------------------------------------------------------------*/
+/* Workout Index
+/*---------------------------------------------------------------------------------------*/
+.workouts li {
+}
+.workouts li a.workout-date{
+	text-decoration: none;
+}
+
+/*---------------------------------------------------------------------------------------*/
+/* Workout Set table in workout#_form */
+/*---------------------------------------------------------------------------------------*/
+
+ul.workout_sets {
+	margin: 10px 0;
+}
+ul.workout_sets li {
+	margin-left: -52px;
+	padding-left: 52px;
+}
+
+ul.workout_sets li a.remove-workout-set {
+	display: block;
+	width: 28px;
+	height: 28px;
+	background: url(../images/remove-icon.png) center center no-repeat;
+	text-indent: -10000px;
+	border-radius: 3px;
+	border: 3px solid transparent;
+	margin: 6px 12px 6px 6px;
+	visibility: hidden;
+	z-index: 10;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+ul.workout_sets li:hover a.remove-workout-set {
+	visibility: visible;
+}
+ul.workout_sets li a.remove-workout-set:hover {
+	border-color: #353535;
+	background-color: #353535;
+}
+ul.workout_sets li .exercise-name {
+	display: block;	
+	cursor: move;
+}
+ul.workout_sets li:hover .exercise-name {	
+	color: #fff;
+}
+
+ul.workout_sets li input[type=text] {
 	border: none; 
 	background-color: transparent; 
 	outline: none; 
@@ -189,102 +292,13 @@ ol.workout_sets li input[type=text] {
 	padding: 0; 
 	margin: 0; 
 	font-size: 26px;
-	line-height: 1.25;
-}
-ol.workout_sets li .round-rect { 
-	display: block;
-	float: left;
-	height: 28px;
-	margin: 6px 0px 6px 6px;
-	padding: 0 10px;
-	border-radius: 5px;
-	border-width: 3px;
-	border-style: solid;
-}
-ol.workout_sets li a.remove-workout-set {
-	display: block;
-	float: left;
-	width: 28px;
-	height: 28px;
-	background: url(../images/remove-icon.png) center center no-repeat;
-	text-indent: -10000px;
-	border-radius: 3px;
-	border: 3px solid transparent;
-	margin: 6px 12px 6px 6px;
-	visibility: hidden;
-	z-index: 10;
-	position: relative;
-}
-ol.workout_sets li:hover a.remove-workout-set {
-	visibility: visible;
-}
-ol.workout_sets li a.remove-workout-set:hover {
-	border-color: #353535;
-	background-color: #353535;
-	color: #2c2c2c;
-}
-ol.workout_sets li .fake-li-num {
-	display: block;
-	position: absolute;
-	text-indent: -10000px;
-	left: -40px;
-	width: 80px;
-	top: 12px;
-	text-align: right;
-}
-ol.workout_sets li:hover .fake-li-num {
-	display: none;
-}
-ol.workout_sets li .exercise-name {
-	display: block;
-	padding: 12px 0 0;	
-	color: #d2d2d2;
-	cursor: move;
-}
-ol.workout_sets li:hover .exercise-name {	
-	color: #fff;
-}
-ol.workout_sets li .details {
-	float: right;
-	margin-right: 6px;
-}
-.muscles {
-	display: block;
-	float: left;
-}
-ol.workout_sets li .muscle-bubble {
-	!display: none;
-	display: block;
-	opacity: .4;
-}
-ol.workout_sets li:hover .muscle-bubble {
-	display: block;
-	opacity: 1;
-}
-ol.workout_sets li .muscle-bubble .muscle-bubble-inner {
-	font-size: 14px;
-	text-transform: uppercase;
-	color: #fff;
-	display: none;
-}
-ol.workout_sets li .muscle-bubble:hover .muscle-bubble-inner {
-	display: inline;
-}
-ol.workout_sets li .field-wrap {
-	border-color: transparent;
-}
-ol.workout_sets li:hover .field-wrap {
-	border-color: #3e3e3e;
-}
-ol.workout_sets li:hover .field-wrap:hover {
-	background-color: #3e3e3e;
+	line-height: 32px;
 }
 .magnitude-label,
 .weight-label {
 	font-family: "Lobster 1.3";
 	color: #595959;	
 	font-size: 23px;
-	line-height: 1;
 }
 
 /*---------------------------------------------------------------------------------------*/
@@ -295,6 +309,7 @@ ol.workout_sets li:hover .field-wrap:hover {
 	border-radius: 8px;
 	margin-left: -12px;
 	margin-bottom: 20px;
+	position: relative;
 }
 .add-exercise-widget .open-widget-button {
 	display: block;
@@ -309,6 +324,8 @@ ol.workout_sets li:hover .field-wrap:hover {
 .add-exercise-widget .control-bar {
 	padding: 10px;
 	position: relative;
+	overflow: hidden;
+	font-weight: normal;
 }
 .add-exercise-widget .left-tab {
 	position: absolute; 
@@ -384,6 +401,7 @@ ol.workout_sets li:hover .field-wrap:hover {
 	background-color: transparent;
 	border: none;
 	color: #fff;
+	font-size: 26px;
 }
 .add-exercise-widget .exercise-picker-panel {
 	display: none;

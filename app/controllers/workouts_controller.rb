@@ -1,120 +1,51 @@
 class WorkoutsController < ApplicationController
-	# GET /workouts
-	# GET /workouts.xml
 	def index
-		@workouts = current_user.workouts.order('date desc')
-
-		respond_to do |format|
-			format.html # index.html.erb
-			format.xml	{ render :xml => @workouts }
-		end
+		@upcoming_workouts =  current_user.workouts.today.incomplete | current_user.workouts.future
+		@past_workouts = current_user.workouts.today.complete | current_user.workouts.past
 	end
-	
-	def upcoming
-		@workouts = current_user.workouts.upcoming	
 		
-		respond_to do |format|
-			format.html # index.html.erb
-			format.xml	{ render :xml => @workouts }
-		end	
-	end
-	
-	def completed
-		@workouts = current_user.workouts.completed
-		
-		respond_to do |format|
-			format.html # index.html.erb
-			format.xml	{ render :xml => @workouts }
-		end
-	end
-
-	def incomplete
-		@workouts = current_user.workouts.forgotten
-		
-		respond_to do |format|
-			format.html # index.html.erb
-			format.xml	{ render :xml => @workouts }
-		end
-	end
-	
-	# GET /workouts/1
-	# GET /workouts/1.xml
 	def show
 		@workout = current_user.workouts.find(params[:id])
-
-		respond_to do |format|
-			format.html # show.html.erb
-			format.xml	{ render :xml => @workout }
-		end
 	end
 
-	# GET /workouts/new
-	# GET /workouts/new.xml
 	def new
 		@workout = Workout.new
-		#@workout.save
-		#redirect_to edit_workout_path(@workout)
-		
-		@workout_set = WorkoutSet.new
-		#1.times { @workout.workout_sets.build }
-		respond_to do |format|
-			format.html # new.html.erb
-			format.xml	{ render :xml => @workout }
-		end
 	end
 
-	# GET /workouts/1/edit
 	def edit
 		@workout = Workout.find(params[:id])
 	end
 
-	# POST /workouts
-	# POST /workouts.xml
 	def create
 		@workout = current_user.workouts.new(params[:workout])
 
-		respond_to do |format|
-			if @workout.save
-				format.html { redirect_to(@workout, :notice => 'Workout was successfully created.') }
-				format.xml	{ render :xml => @workout, :status => :created, :location => @workout }
-			else
-				format.html { render :action => "new" }
-				format.xml	{ render :xml => @workout.errors, :status => :unprocessable_entity }
-			end
+		if @workout.save
+			redirect_to( edit_workout_path(@workout), :notice => 'Workout was successfully created.')
+		else
+			render :action => "new" 
 		end
 	end
 
-	# PUT /workouts/1
-	# PUT /workouts/1.xml
 	def update
 		@workout = Workout.find(params[:id])
 
-		respond_to do |format|
-			if @workout.update_attributes(params[:workout])
-				format.html { redirect_to( edit_workout_path(@workout), :notice => 'Workout was successfully updated.') }
-				format.xml	{ head :ok }
-			else
-				format.html { render :action => "edit" }
-				format.xml	{ render :xml => @workout.errors, :status => :unprocessable_entity }
-			end
+		if @workout.update_attributes(params[:workout])
+			redirect_to( edit_workout_path(@workout), :notice => 'Workout was successfully updated.') 
+		else
+			render :action => "edit"
 		end
 	end
-	
-	# def complete 
-# 		@workout = Workout.find(params[:id])
-# 		@task.update_attributes :complete, true
-# 		redirect_to workouts_path 
-# 	end
 
-	# DELETE /workouts/1
-	# DELETE /workouts/1.xml
 	def destroy
 		@workout = Workout.find(params[:id])
 		@workout.destroy
 
-		respond_to do |format|
-			format.html { redirect_to(workouts_url) }
-			format.xml	{ head :ok }
-		end
+		redirect_to(workouts_url)
+	end
+	
+	def complete
+		@workout = Workout.find(params[:id])
+		@workout.update_attribute :complete, true
+		redirect_to workouts_url, :notice => 'Marked workout as complete'
 	end
 end

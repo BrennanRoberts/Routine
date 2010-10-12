@@ -1,19 +1,19 @@
 <%= fields_for "workout[workout_sets_attributes][" + i + "]",workout_set do |f| %>
 	<li>
+		<span class="index"><span><%= i.to_i + 1  %></span></span>
 		<%= f.hidden_field :id %>
 		<a class="remove-workout-set" href="javascript: void(0);"></a>
 		<%= f.hidden_field :_destroy %>
-		<span class="fake-li-num"></span>
 		<span class="details">
 			<span class="muscles">
-				<%= get_muscle_groups(workout_set.exercise) %> 
+				<%= get_muscle_group_bubbles(workout_set.exercise.muscle_groups) %> 
 			</span>
 			<span class="round-rect field-wrap">
-				<span><%= f.text_field :weight, { :size => 3, :autocomplete => "off" } %></span>
+				<%= f.text_field :weight, { :size => 3, :autocomplete => "off" } %>
 				<span class="weight-label">lbs</span>
 			</span>
 			<span class="round-rect field-wrap">
-				<span><%= f.text_field :magnitude, { :size => 3, :autocomplete => "off" } %></span>
+				<%= f.text_field :magnitude, { :size => 3, :autocomplete => "off" } %>
 				<span class="magnitude-label">x</span>
 			</span>
 		</span>
