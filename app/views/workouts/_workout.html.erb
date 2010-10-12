@@ -1,6 +1,7 @@
 <li>
 	<%= link_to workout.date.strftime("%A %b %d"), edit_workout_path(workout), :class => "workout-date" %>
-	<% if !workout.complete && workout.date.today? %>
+	
+	<% if !workout.complete && workout.date === Date.today %>
 		<%= link_to "Done!", complete_workout_path(workout), :method => :put %>
 	<% end %>
 	<span class="details">

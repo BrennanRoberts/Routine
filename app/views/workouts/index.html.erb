@@ -1,4 +1,15 @@
 <div class="border-header">
+	<h1>Today</h1>
+</div>
+<ul class="workouts std-list">
+	<% if @today_workouts.length > 0 %>
+		<%= render :partial => "workout", :collection => @upcoming_workouts %>
+	<% else %>
+		<p>You have no upcoming workouts.  Get to work!</p>
+	<% end %>
+</ul>
+
+<div class="border-header">
 	<h1>Upcoming</h1>
 </div>
 <ul class="workouts std-list">

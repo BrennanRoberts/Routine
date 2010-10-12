@@ -12,6 +12,6 @@ class Workout < ActiveRecord::Base
 	scope :forgotten, where("workouts.complete = ? and date < ?", false, Date.today)
 	
 	def muscle_groups 
-		MuscleGroup.joins(:muscles => [:exercises => :workouts]).where(:workouts => {:id => id}).uniq
+		MuscleGroup.joins(:muscles => [:exercises => :workouts]).where(:workouts => {:id => id.to_i}).uniq
 	end
 end
