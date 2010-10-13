@@ -1,8 +1,7 @@
 class WorkoutsController < ApplicationController
 	def index
-		@today_workouts = current_user.workouts.today
-		@upcoming_workouts =  current_user.workouts.future
-		@past_workouts = current_user.workouts.past
+		@upcoming_workouts =  current_user.workouts.today.incomplete | current_user.workouts.future 
+		@past_workouts = current_user.workouts.past | current_user.workouts.today.complete
 	end
 		
 	def show
@@ -10,7 +9,16 @@ class WorkoutsController < ApplicationController
 	end
 
 	def new
-		@workout = Workout.new
+		if params[:type]
+			new_params = {:date => Date.today}
+			case params[:type]
+				when "log"
+					new_params[:complete] = true
+			end	
+			@workout = Workout.new(new_params)
+		else
+			@workout = Workout.new
+		end
 	end
 
 	def edit

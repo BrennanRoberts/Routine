@@ -1,32 +1,30 @@
-<div class="border-header">
-	<h1>Today</h1>
-</div>
-<ul class="workouts std-list">
-	<% if @today_workouts.length > 0 %>
-		<%= render :partial => "workout", :collection => @upcoming_workouts %>
-	<% else %>
-		<p>You have no upcoming workouts.  Get to work!</p>
-	<% end %>
-</ul>
 
 <div class="border-header">
 	<h1>Upcoming</h1>
+	<span class="right">
+		<%= link_to 'Schedule a Workout', new_workout_path, :class => "new-workout-button" %>
+	</span>
 </div>
 <ul class="workouts std-list">
 	<% if @upcoming_workouts.length > 0 %>
 		<%= render :partial => "workout", :collection => @upcoming_workouts %>
 	<% else %>
-		<p>You have no upcoming workouts.  Get to work!</p>
+		<p>You have no upcoming workouts. <%= link_to "Schedule one!", new_workout_path %></p>
 	<% end %>
 </ul>
 
 
 <div class="border-header">
-	<h1>Logs</h1>
+	<h1>Log</h1>
+	<span class="right">
+		<%= link_to 'Record a Workout',{ :action => "new", :type => "log" }, :class => "new-workout-button" %>
+	</span>
 </div>
 <ul class="workouts std-list">
-	<%= render :partial => "workout", :collection => @past_workouts %>
+	<% if @past_workouts.length > 0 %>
+		<%= render :partial => "workout", :collection => @past_workouts %>
+	<% else %>
+		<p>Completed workouts will show up here.</p>
+	<% end %>
 </ul>
 <br />
-
-<%= link_to 'New Workout', new_workout_path %>

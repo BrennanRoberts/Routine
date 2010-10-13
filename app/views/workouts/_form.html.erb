@@ -1,6 +1,7 @@
 <%= form_for(@workout) do |f| %>
 	<div class="border-header">
-	  <h1>Workout</h1>
+	  <h1>
+	  	<h1>Workout</h1>
 		<div class="right">
 			<%= f.date_select :date %>
 		  <%= f.check_box :complete  %>
@@ -16,3 +17,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+<%= link_to "Delete this Workout", @workout, :confirm => 'Are you sure?', :method => :delete %>

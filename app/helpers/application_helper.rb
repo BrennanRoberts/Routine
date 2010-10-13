@@ -24,6 +24,6 @@ module ApplicationHelper
 	end
 	
 	def muscle_group_tag(mg)
-		content_tag(:span, content_tag(:span, mg.name, :class=> "muscle-bubble-inner"), :class =>"muscle-bubble round-rect #{mg.name.downcase}")
+		content_tag(:span, content_tag(:span, mg.name, :class=> "muscle-bubble-inner"), :class =>"muscle-bubble muscle-group-border #{mg.name.downcase}")
 	end
 end

@@ -121,11 +121,16 @@ $(function() {
 	  
   	//setup search exercise field 
 		search_field.keyup( function() {
-			var url = search_field.attr('data-autocomplete-url') + '?query=' + search_field.val();
-			
-			$.get(url, null, function(data){
-				search_results_list.html(data);
-			}, 'html');
+			var val = search_field.val();
+			if (val.length > 0){			
+				var url = search_field.attr('data-autocomplete-url') + '?query=' + search_field.val();
+				
+				$.get(url, null, function(data){
+					search_results_list.html(data);
+				}, 'html');
+			} else {
+				search_results_list.empty();
+			}
 		});
 	  
   	that = {

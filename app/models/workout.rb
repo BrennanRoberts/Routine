@@ -6,7 +6,7 @@ class Workout < ActiveRecord::Base
 	
 	scope :future, where("workouts.date > ?", Date.today).order('date desc')		
 	scope :past, where("workouts.date < ?", Date.today).order('date asc')
-	scope :today, where(:date => Date.today)
+	scope :today, where({:date => Date.today})
 	scope :complete, where(:complete => true)
 	scope :incomplete, where(:complete => false)
 	scope :forgotten, where("workouts.complete = ? and date < ?", false, Date.today)
