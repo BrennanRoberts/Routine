@@ -6,10 +6,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-		<% Muscle.all.each do |muscle| %>
+		<% MuscleGroup.all.each do |muscle_group| %>
 		<div>
-			<%= check_box_tag "exercise[muscle_ids][]", muscle.id, @exercise.muscles.include?(muscle) %>
-			<%= muscle.name %>
+			<%= check_box_tag "exercise[muscle_group_ids][]", muscle_group.id, @exercise.muscle_groups.include?(muscle_group) %>
+			<%= muscle_group.name %>
 		</div>
 		<% end %>
   </div>

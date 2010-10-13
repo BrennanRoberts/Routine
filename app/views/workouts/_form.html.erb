@@ -14,7 +14,7 @@
   </ul>
   <%= render "add_exercise_widget" %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :Save %>
+    <%= button_to "Delete", @workout, :confirm => 'Are you sure?', :method => :delete, :class => "delete-button" if controller.action_name == "edit" %>
   </div>
 <% end %>
-<%= link_to "Delete this Workout", @workout, :confirm => 'Are you sure?', :method => :delete %>

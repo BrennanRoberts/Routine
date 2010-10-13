@@ -1,10 +1,8 @@
 class MuscleGroup < ActiveRecord::Base
-	has_many :muscles
+	has_many :musclegroupizations
+	has_many :exercises, :through => :musclegroupizations
+	
 	validates_presence_of :name
 	
 	default_scope order('name')
-	
-	def exercises
-		Exercise.includes(:muscles => :muscle_group).where(:muscle_groups => {:id => id })
-	end
 end

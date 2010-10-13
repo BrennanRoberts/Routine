@@ -27,21 +27,21 @@ body {
 }
 input[type=text], input[type=password], input[type=button], input[type=submit] { 
 	font-family: Sansation;
+	font-size: 20px;
 }
 nav {
 	font-family: Eurostile;
 	font-weight: lighter;
 }
-#content .border-header h1 {
-	!font-family: "Lobster 1.3";
+.border-header h1 {
+	font-weight: bold;
+	letter-spacing: -1px;
 }
 .magnitude-label,
 .weight-label {
 	font-family: "Lobster 1.3";
 }
-.border-header h1 {
-	font-weight: bold;	
-}
+
 
 /*---------------------------------------------------------------------------------------*/
 /* Reset and Basic Style */
@@ -57,19 +57,20 @@ ul { list-style: none; }
 a { color: #fff; }
 
 input[type=text], input[type=password] { 
-	font-size: 20px;
+	
 }
 
 input[type=button], input[type=submit] {
 	border-radius: 5px;
 	border: 2px solid #ffc600;
 	color: #fff;
-	padding: 5px 12px 3px;
+	padding: 10px 12px 6px;
 	background-color: transparent;
 	cursor: pointer;
 	text-transform: uppercase;
 	letter-spacing: 3px;
-	font-size: 20px;
+	font-size: 23px;
+	float: left;
 }
 
 td { padding: 10px; }
@@ -89,6 +90,13 @@ div.error {
 	border-radius : 5px;
 	padding: 10px 12px 6px;
 	margin-bottom: 20px;
+}
+
+input.delete-button {
+	border: 3px solid #ba3e02;
+	border-radius : 5px;
+	padding: 10px 12px 6px;
+	float: right;
 }
 
 /*---------------------------------------------------------------------------------------*/
@@ -216,7 +224,7 @@ nav li a {
 
 #content .border-header {
 	border-bottom: 1px solid #666;
-	padding: 0 0 6px 6px;
+	padding: 0 0 3px 6px;
 	overflow: hidden;
 }
 
@@ -301,14 +309,16 @@ ul.workout_sets li:hover .field-wrap:hover {
 .workouts li a.workout-date{
 	text-decoration: none;
 }
-a.new-workout-button {
+a.new-workout-button,
+a.new-exercise-button {
 	display: block;
 	border-radius: 3px;
 	padding: 6px 12px 3px 43px;
 	background: url(../images/add-icon.png) 12px center transparent no-repeat;
 	text-decoration: none;
 }
-a.new-workout-button:hover {
+a.new-workout-button:hover,
+a.new-exercise-button:hover {
 	background-color: #212121;
 }
 

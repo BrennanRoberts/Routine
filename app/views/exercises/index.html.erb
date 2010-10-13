@@ -1,1 +1,9 @@
-<%= render :partial => "shared/add_exercise_widget_exercise_item", :collection => @exercises, :as => :exercise %>
+<div class="border-header">
+	<h1>Exercises</h1>
+	<span class="right">
+		<%= link_to "New", new_exercise_path, :class => 'new-exercise-button' %>
+	</span>
+</div>
+<ul class="std-list">
+	<%= render @exercises %>
+</ul>

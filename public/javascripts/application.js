@@ -109,7 +109,7 @@ $(function() {
 			$.get(url, null, function(data) {	 
 		  	muscle_group_exercises_list.html(data);
 		  	that.switch_view('selected-muscle-group');
-	  	}, 'HTML');
+	  	}, 'html');
 				
 	  	return false;
 	  });

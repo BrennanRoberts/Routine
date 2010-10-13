@@ -5,10 +5,10 @@
   <%= @exercise.name %>
 </p>
 <p>
-	<b>Muscles:</b>
+	<b>Muscles Groups:</b>
 	<ul>
-	<% @exercise.muscles.each do |muscle| %>
-		<li><%= muscle.name %></li>
+	<% @exercise.muscle_groups.each do |muscle_group| %>
+		<li><%= muscle_group.name %></li>
 	<% end %>
 	</ul>
 </p>

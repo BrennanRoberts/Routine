@@ -1,7 +1,10 @@
 Routine::Application.routes.draw do
   resources :users
-  resources :muscle_groups
-  resources :muscles
+  resources :muscle_groups do
+  	member do
+  		get :ajax_exercises
+  	end
+  end
 
 	resources :workouts do
 		member do
@@ -11,7 +14,7 @@ Routine::Application.routes.draw do
 
 	resources :exercises do
 		collection do
-			get :autocomplete
+			get :ajax_search
 		end	
 	end
 	

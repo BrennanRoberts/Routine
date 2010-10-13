@@ -10,17 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101012161753) do
+ActiveRecord::Schema.define(:version => 20101013182948) do
 
   create_table "exercises", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "exercises_muscles", :id => false, :force => true do |t|
-    t.integer "exercise_id"
-    t.integer "muscle_id"
   end
 
   create_table "measurement_units", :force => true do |t|
@@ -36,11 +31,11 @@ ActiveRecord::Schema.define(:version => 20101012161753) do
     t.datetime "updated_at"
   end
 
-  create_table "muscles", :force => true do |t|
-    t.string   "name"
+  create_table "musclegroupizations", :force => true do |t|
+    t.integer  "exercise_id"
+    t.integer  "muscle_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "muscle_group_id"
   end
 
   create_table "user_sessions", :force => true do |t|

@@ -2,79 +2,46 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.xml
   def index
-	  @exercises = Exercise.where('name LIKE ?', "#{params[:query]}%")
-		
-    respond_to do |format|
-      format.html { render :layout => false }
-     	format.js { render :json => @exercises }
-    end
+	  @exercises = Exercise.all
   end
   
-  def autocomplete
-  	if params[:muscle_group]
-  		
-  	elsif
-  		@exercises = Exercise.all
-  	end
-  	
-  	#@exercises = @exercise.where('name LIKE ?', "#{params[:term]}%").includes(:muscles)
-  	respond_to do |format|
-	  	format.json { render :json => @exercises }
-	  end
+  def ajax_search
+  	@exercises = Exercise.where('name LIKE ?', "#{params[:query]}%")
+  	render :layout => false
   end
 
-  # GET /exercises/1
-  # GET /exercises/1.xml
   def show
     @exercise = Exercise.find(params[:id])
   end
 
-  # GET /exercises/new
-  # GET /exercises/new.xml
   def new
     @exercise = Exercise.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @exercise }
-    end
   end
 
-  # GET /exercises/1/edit
   def edit
     @exercise = Exercise.find(params[:id])
   end
 
-  # POST /exercises
-  # POST /exercises.xml
   def create
     @exercise = Exercise.new(params[:exercise])
 
-    respond_to do |format|
-      if @exercise.save
-        format.html { redirect_to(exercises_path, :notice => 'Exercise was successfully created.') }
-        format.xml  { render :xml => @exercise, :status => :created, :location => @exercise }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @exercise.errors, :status => :unprocessable_entity }
-      end
+    if @exercise.save
+      redirect_to(exercises_path, :notice => 'Exercise was successfully created.') 
+    else
+			render :action => "new"
     end
   end
 
   # PUT /exercises/1
   # PUT /exercises/1.xml
   def update
-  	params[:exercise][:muscle_ids] ||= []
+  	params[:exercise][:muscle_group_ids] ||= []
     @exercise = Exercise.find(params[:id])
 
-    respond_to do |format|
-      if @exercise.update_attributes(params[:exercise])
-        format.html { redirect_to(@exercise, :notice => 'Exercise was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @exercise.errors, :status => :unprocessable_entity }
-      end
+		if @exercise.update_attributes(params[:exercise])
+			redirect_to(@exercise, :notice => 'Exercise was successfully updated.')
+		else
+			render :action => "edit"
     end
   end
 

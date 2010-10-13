@@ -18,7 +18,7 @@
 					<a href="javascript:void(0);" class="back-to-browse-muscle-group-button clear">&lt;</a>
 				</div>
 				<div class="control-header search-exercises-control-header">
-					<%= text_field_tag :term, nil, {:autocomplete => "off", :placeholder => "Search", :class => "autocomplete search-field", "data-autocomplete-url" => exercises_path() } %>
+					<%= text_field_tag :term, nil, {:autocomplete => "off", :placeholder => "Search", :class => "autocomplete search-field", "data-autocomplete-url" => ajax_search_exercises_path() } %>
 				</div>
 			</div>
 			<!-- end groups -->
@@ -32,7 +32,7 @@
 			<div class="browse-exercises-panel exercise-picker-panel current">
 				<ul class="muscle-groups widget-list">
 					<% MuscleGroup.all.each do |mg| %>
-						<li><%= link_to content_tag(:span, mg.name, :class => "muscle-group-name"), mg, :class => "muscle-group-hover-border " + mg.name.downcase %></li>
+						<li><%= link_to content_tag(:span, mg.name, :class => "muscle-group-name"), { :controller => :muscle_groups, :action => :ajax_exercises, :id => mg.id }, :class => "muscle-group-hover-border " + mg.name.downcase %></li>
 					<% end %>
 					<li></li>
 				</ul>
