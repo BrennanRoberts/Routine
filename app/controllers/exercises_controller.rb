@@ -1,8 +1,6 @@
 class ExercisesController < ApplicationController
-  # GET /exercises
-  # GET /exercises.xml
   def index
-	  @exercises = Exercise.all
+	  @exercises = Exercise.order(:name)
   end
   
   def ajax_search
@@ -32,28 +30,21 @@ class ExercisesController < ApplicationController
     end
   end
 
-  # PUT /exercises/1
-  # PUT /exercises/1.xml
   def update
   	params[:exercise][:muscle_group_ids] ||= []
     @exercise = Exercise.find(params[:id])
 
 		if @exercise.update_attributes(params[:exercise])
-			redirect_to(@exercise, :notice => 'Exercise was successfully updated.')
+			redirect_to(exercises_path, :notice => 'Exercise was successfully updated.')
 		else
 			render :action => "edit"
     end
   end
 
-  # DELETE /exercises/1
-  # DELETE /exercises/1.xml
   def destroy
     @exercise = Exercise.find(params[:id])
     @exercise.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(exercises_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(exercises_url)
   end
 end

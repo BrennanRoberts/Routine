@@ -128,7 +128,7 @@ input.delete-button {
 .abdomen { border-color: #6797bd; }
 .arm { border-color: #bb186e; }
 .back { border-color: #5f3986; }
-.buttocks { border-color: #42783a; }
+.hips { border-color: #42783a; }
 .chest { border-color: #ce7430; }
 .forearm { border-color: #ffc600;}
 .leg { border-color: #9eb239; }
@@ -138,7 +138,7 @@ input.delete-button {
 .muscle-group-hover-border.abdomen:hover { border-color: #6797bd; }
 .muscle-group-hover-border.arm:hover { border-color: #bb186e; }
 .back:hover { border-color: #5f3986; }
-.muscle-group-hover-border.buttocks:hover { border-color: #42783a; }
+.muscle-group-hover-border.hips:hover { border-color: #42783a; }
 .muscle-group-hover-border.chest:hover { border-color: #ce7430; }
 .muscle-group-hover-border.forearm:hover { border-color: #ffc600;}
 .muscle-group-hover-border.leg:hover { border-color: #9eb239; }
@@ -194,6 +194,8 @@ header h1 a{
 }
 
 nav { 
+	font-size: 20px;
+	letter-spacing: 5px;
 	text-transform: uppercase;
 }
 
@@ -210,9 +212,16 @@ nav li {
 nav li a {
 	display: block;
 	width: 240px;
-	font-size: 20px;
 	text-decoration: none; 
-	letter-spacing: 5px; 
+}
+nav li a:hover {
+	text-shadow: 0 0 4px #999;
+}
+
+nav li span {
+	display: block;
+	width: 240px;
+	color: #414141;
 }
 
 /*---------------------------------------------------------------------------------------*/
@@ -258,6 +267,7 @@ nav li a {
 }
 .std-list a {
 	color: inherit;
+	text-decoration: none;
 }
 .std-list li .index {
 	color: #595959;

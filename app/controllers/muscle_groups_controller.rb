@@ -25,7 +25,7 @@ class MuscleGroupsController < ApplicationController
     @muscle_group = MuscleGroup.new(params[:muscle_group])
 
     if @muscle_group.save
-      redirect_to(@muscle_group, :notice => 'Muscle group was successfully created.') 
+      redirect_to(muscle_groups_path, :notice => 'Muscle group was successfully created.') 
     else
       render :action => "new" 
     end
@@ -35,7 +35,7 @@ class MuscleGroupsController < ApplicationController
     @muscle_group = MuscleGroup.find(params[:id])
     
     if @muscle_group.update_attributes(params[:muscle_group])
-      redirect_to(@muscle_group, :notice => 'Muscle group was successfully updated.')
+      redirect_to(muscle_groups_path, :notice => 'Muscle group was successfully updated.')
     else
 			render :action => "edit"
  

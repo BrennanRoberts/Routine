@@ -1,5 +1,5 @@
 <li>
-	<%= link_to exercise.name, exercise %>
+	<%= link_to exercise.name, [:edit, exercise] %>
 	<span class="right">
 		<%= get_muscle_group_bubbles(exercise.muscle_groups) %>
 	</span>
