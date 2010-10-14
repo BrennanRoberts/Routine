@@ -4,8 +4,8 @@ class Workout < ActiveRecord::Base
 	has_many :exercises, :through => :workout_sets
 	accepts_nested_attributes_for :workout_sets, :allow_destroy => true
 	
-	scope :future, where("workouts.date > ?", Date.today).order('date desc')		
-	scope :past, where("workouts.date < ?", Date.today).order('date asc')
+	scope :future, where("workouts.date > ?", Date.today).order('date')		
+	scope :past, where("workouts.date < ?", Date.today).order('date desc')
 	scope :today, where({:date => Date.today})
 	scope :complete, where(:complete => true)
 	scope :incomplete, where(:complete => false)

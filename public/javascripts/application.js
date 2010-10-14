@@ -14,18 +14,33 @@ var utility = {
 };
 
 $(function() {
+
+// WORKOUT#INDEX
+//------------------------------------------------------------------------------
+$('.workouts li a.complete-workout').click(function(e){
+	var jthis = $(this);
+	$.ajax(
+		{
+			type: 'put',
+			url: jthis.attr('href'),
+			success: function(){
+				jthis.addClass('complete');			
+				if(jthis.closest('ul').hasClass('upcoming')) {
+					var li = jthis.closest('li');
+					li.slideUp(function(){ 
+						$('ul.recent').prepend(li);
+						li.slideDown();
+					});
+				}
+			}
+		}
+	);
 	
+	return false;
+});	
 
-  $('form a.add_child').click(function() {
-    var association = $(this).attr('data-association');
-    var template = $('#' + association + '_fields_template').html();
-    var regexp = new RegExp('new_' + association, 'g');
-    var new_id = new Date().getTime();
-		
-    $('.'+ association).append(template.replace(regexp, new_id));
-    return false;
-  });
-
+// WORKOUT#FORM
+//------------------------------------------------------------------------------
 	//sort workout_set rows
 	$('ul.workout_sets').sortable({
 		axis: 'y',
