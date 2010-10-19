@@ -73,6 +73,8 @@ input[type=text], input[type=password] {
 
 input[type=button], input[type=submit] {
 	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border: 3px solid #ffc600;
 	color: #fff;
 	padding: 10px 12px 6px;
@@ -98,6 +100,8 @@ div.field_with_errors { display: inline;}
 div.error {
 	border: 3px solid #ba3e02;
 	border-radius : 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	padding: 10px 12px 6px;
 	margin-bottom: 20px;
 }
@@ -106,6 +110,8 @@ div.error {
 	display: block;
 	border: 3px solid #ba3e02;
 	border-radius : 5px;
+	-moz-border-radius : 5px;
+	-webkit-border-radius : 5px;
 	padding: 10px 12px 6px;
 	float: right;
 	text-decoration: none;
@@ -122,6 +128,8 @@ div.error {
 	margin: 6px 0px 6px 6px;
 	padding: 0 10px;
 	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border-width: 3px;
 	border-style: solid;
 	line-height: 26px;
@@ -270,7 +278,8 @@ nav li span {
 	padding: 0 6px;
 	line-height: 50px;
 	border-radius: 8px;
-	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
 	position: relative;
 	color: #ccc;
 }
@@ -300,6 +309,8 @@ nav li span {
 	margin: 6px 0px 6px 6px;
 	padding: 0 10px;
 	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border-width: 3px;
 	border-style: solid;
 	line-height: 26px;
@@ -336,6 +347,8 @@ a.new-workout-button,
 a.new-exercise-button {
 	display: block;
 	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	padding: 6px 12px 3px 43px;
 	background: url(../images/add-icon.png) 12px center transparent no-repeat;
 	text-decoration: none;
@@ -351,6 +364,8 @@ a.new-exercise-button:hover {
 	height: 28px;
 	border: 3px solid #424342;
 	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	text-indent: -10000px;
 	background: url(../images/checkmark-icon.png) transparent no-repeat;
 	background-position: 100px 100px;
@@ -384,6 +399,8 @@ ul.workout_sets li a.remove-workout-set {
 	background: url(../images/remove-icon.png) center center no-repeat;
 	text-indent: -10000px;
 	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	border: 3px solid transparent;
 	margin: 6px 12px 6px 6px;
 	visibility: hidden;
@@ -430,6 +447,8 @@ ul.workout_sets li input[type=text] {
 .add-exercise-widget {
 	background-color: #212121;
 	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
 	margin-left: -12px;
 	margin-bottom: 20px;
 	position: relative;
@@ -467,6 +486,8 @@ ul.workout_sets li input[type=text] {
 	background: url(../images/min-icon.png) center center no-repeat;
 	border: 3px solid transparent;
 	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	margin: 6px 0 0 6px;
 }
 .add-exercise-widget .left-tab .min-widget:hover {
@@ -481,6 +502,8 @@ ul.workout_sets li input[type=text] {
 .add-exercise-widget .control-header {
 	display: none;
 	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border: 3px solid #2c2c2c;
 	line-height: 1.7	;
 	
@@ -541,9 +564,12 @@ ul.workout_sets li input[type=text] {
 }
 .add-exercise-widget .widget-list > li > a {
 	display: block;
-	height: 40px;
+	height: 46px;
+	
 	color: #595959;
 	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
 	position: relative;
 	text-decoration: none;
 	line-height: 1.9;
@@ -578,6 +604,8 @@ ul.workout_sets li input[type=text] {
 /*---------------------------------------------------------------------------------------*/
 #login-wrap {
 	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 	background-color: #212121;
 	margin: 30px 90px;
 	padding: 30px 30px 10px;
@@ -585,11 +613,14 @@ ul.workout_sets li input[type=text] {
 #login-wrap input[type=text],
 #login-wrap input[type=password] {
 	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	color: #fff;
 	border: 3px solid #78a2c4;
 	background-color: #272727;
 	padding: 10px 12px 6px;
 	font-size: 26px;
+	width: 370px;
 }
 #login-wrap input[type=submit] {
 	display: block;
