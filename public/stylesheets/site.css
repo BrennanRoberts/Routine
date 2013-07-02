@@ -30,7 +30,7 @@ input[type=text], input[type=password], input[type=button], input[type=submit] {
 	font-weight: lighter;
 }
 nav {
-	font-family: Eurostile;
+	/* font-family: Eurostile; */
 	font-weight: lighter;
 }
 .border-header h1 {
