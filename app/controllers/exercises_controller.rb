@@ -2,9 +2,9 @@ class ExercisesController < ApplicationController
   def index
     @exercises = Exercise.order(:name)
   end
-  
+
   def ajax_search
-    @exercises = Exercise.where('name LIKE ?', "#{params[:query]}%")
+    @exercises = Exercise.where('name LIKE ?', "%#{params[:query]}%")
     render :layout => false
   end
 

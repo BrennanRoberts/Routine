@@ -1,4 +1,3 @@
-search *term*
 remove search modality
 easier workout set duplication
 add exercise inline
