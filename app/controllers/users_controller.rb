@@ -12,11 +12,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-  	if current_user.username = "Brennan"
-  		@user = User.find(params[:id])
-  	else
-	    @user = current_user
-		end
+    if current_user.username = "Brennan"
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
   end
 
   def create
@@ -40,9 +40,9 @@ class UsersController < ApplicationController
   end
   
   def destroy
-  	@user = User.find(params[:id])
-		@user.destroy
+    @user = User.find(params[:id])
+    @user.destroy
 
-		redirect_to(users_path)
+    redirect_to(users_path)
   end
 end

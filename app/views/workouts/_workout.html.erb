@@ -1,12 +1,12 @@
 <li>
-	<% if !workout.complete && workout.date <= Date.today %>
-			<%= link_to "Done", complete_workout_path(workout), :method => :put, :class => "complete-workout" %>
-	<% end %>
-	<%  %>
-	<%= link_to workout.date.strftime("%A %b %d"), edit_workout_path(workout), :class => "workout-date" %>
-	<span class="details">
-		<span class="muscles">
-	  	<%= get_muscle_group_bubbles(workout.muscle_groups) %>
-	  </span>
+  <% if !workout.complete && workout.date <= Date.today %>
+      <%= link_to "Done", complete_workout_path(workout), :method => :put, :class => "complete-workout" %>
+  <% end %>
+  <%  %>
+  <%= link_to workout.date.strftime("%A %b %d"), edit_workout_path(workout), :class => "workout-date" %>
+  <span class="details">
+    <span class="muscles">
+      <%= get_muscle_group_bubbles(workout.muscle_groups) %>
+    </span>
   </span>
 </li>

@@ -1,20 +1,20 @@
 <div id="login-wrap">
-	<%= form_for @user_session do |f| %>
-		<% if @user_session.errors.count > 0 %>
-			<div class="error">
-				Wrong username / password
-			</div>
-		<% end %>
-		<div class="field">
-	    <%= f.label :username %><br />
-	    <%= f.text_field :username, :size => 22 %>
-	  </div>
-	  <div class="field">
-	  	<%= f.label :password %><br />
-	  	<%= f.password_field :password, :size => 22  %>
-	  </div>
-		<div class="field">
-	  	<%= f.submit "Login" %><br />
-	  </div>
-	<% end %>
+  <%= form_for @user_session do |f| %>
+    <% if @user_session.errors.count > 0 %>
+      <div class="error">
+        Wrong username / password
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :username %><br />
+      <%= f.text_field :username, :size => 22 %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, :size => 22  %>
+    </div>
+    <div class="field">
+      <%= f.submit "Login" %><br />
+    </div>
+  <% end %>
 </div>

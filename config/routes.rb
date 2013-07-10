@@ -1,28 +1,28 @@
 Routine::Application.routes.draw do
   resources :users
   resources :muscle_groups do
-  	member do
-  		get :ajax_exercises
-  	end
+    member do
+      get :ajax_exercises
+    end
   end
 
-	resources :workouts do
-		member do
-			put :complete
-		end
-	end
+  resources :workouts do
+    member do
+      put :complete
+    end
+  end
 
-	resources :exercises do
-		collection do
-			get :ajax_search
-		end	
-	end
-	
-	resources :workout_sets
-	resources :user_sessions
-	
-	match "login" => "user_sessions#new"
-	match "logout" => "user_sessions#destroy"
+  resources :exercises do
+    collection do
+      get :ajax_search
+    end 
+  end
+  
+  resources :workout_sets
+  resources :user_sessions
+  
+  match "login" => "user_sessions#new"
+  match "logout" => "user_sessions#destroy"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

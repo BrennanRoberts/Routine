@@ -7,25 +7,25 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<header>	
-	<div id="usernav">
-		<% if current_user %>
-			<%= link_to current_user.username, edit_user_path(:current) %> | 
-			<%= link_to "Logout", logout_path %> |		
-		<% end %>
-		<%= link_to 'Muscle Groups', muscle_groups_path %>
-	</div>	
-	<h1><%= link_to "Routine", root_url %></h1>
-	<nav>
-		<ul>
-			<li><span>Dashboard</span></li>
-			<li><%= link_to 'Workouts', workouts_path %></li>
-			<li><%= link_to 'Exercises', exercises_path %></li>
-		</ul>
-	</nav>
+<header>  
+  <div id="usernav">
+    <% if current_user %>
+      <%= link_to current_user.username, edit_user_path(:current) %> | 
+      <%= link_to "Logout", logout_path %> |    
+    <% end %>
+    <%= link_to 'Muscle Groups', muscle_groups_path %>
+  </div>  
+  <h1><%= link_to "Routine", root_url %></h1>
+  <nav>
+    <ul>
+      <li><span>Dashboard</span></li>
+      <li><%= link_to 'Workouts', workouts_path %></li>
+      <li><%= link_to 'Exercises', exercises_path %></li>
+    </ul>
+  </nav>
 </header>
 <div id="content" class="wrap">
-	<%= yield %>
+  <%= yield %>
 </div>
 </body>
 </html>

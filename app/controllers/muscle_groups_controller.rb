@@ -3,11 +3,11 @@ class MuscleGroupsController < ApplicationController
     @muscle_groups = MuscleGroup.all
   end
 
-	def ajax_exercises
-		@muscle_group = MuscleGroup.find(params[:id])
-		
-		render :layout => false
-	end
+  def ajax_exercises
+    @muscle_group = MuscleGroup.find(params[:id])
+    
+    render :layout => false
+  end
 
   def show
     @muscle_group = MuscleGroup.find(params[:id])
@@ -37,7 +37,7 @@ class MuscleGroupsController < ApplicationController
     if @muscle_group.update_attributes(params[:muscle_group])
       redirect_to(muscle_groups_path, :notice => 'Muscle group was successfully updated.')
     else
-			render :action => "edit"
+      render :action => "edit"
  
     end
   end
@@ -46,6 +46,6 @@ class MuscleGroupsController < ApplicationController
     @muscle_group = MuscleGroup.find(params[:id])
     @muscle_group.destroy
 
-		redirect_to(muscle_groups_url)
+    redirect_to(muscle_groups_url)
   end
 end

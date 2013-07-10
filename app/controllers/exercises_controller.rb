@@ -1,11 +1,11 @@
 class ExercisesController < ApplicationController
   def index
-	  @exercises = Exercise.order(:name)
+    @exercises = Exercise.order(:name)
   end
   
   def ajax_search
-  	@exercises = Exercise.where('name LIKE ?', "#{params[:query]}%")
-  	render :layout => false
+    @exercises = Exercise.where('name LIKE ?', "#{params[:query]}%")
+    render :layout => false
   end
 
   def show
@@ -26,18 +26,18 @@ class ExercisesController < ApplicationController
     if @exercise.save
       redirect_to(exercises_path, :notice => 'Exercise was successfully created.') 
     else
-			render :action => "new"
+      render :action => "new"
     end
   end
 
   def update
-  	params[:exercise][:muscle_group_ids] ||= []
+    params[:exercise][:muscle_group_ids] ||= []
     @exercise = Exercise.find(params[:id])
 
-		if @exercise.update_attributes(params[:exercise])
-			redirect_to(exercises_path, :notice => 'Exercise was successfully updated.')
-		else
-			render :action => "edit"
+    if @exercise.update_attributes(params[:exercise])
+      redirect_to(exercises_path, :notice => 'Exercise was successfully updated.')
+    else
+      render :action => "edit"
     end
   end
 

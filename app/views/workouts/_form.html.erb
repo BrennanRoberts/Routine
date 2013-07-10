@@ -1,16 +1,16 @@
 <%= form_for(@workout) do |f| %>
-	<div class="border-header">
-	  <h1>
-	  	<h1>Workout</h1>
-		<div class="right">
-			<%= f.date_select :date %>
-		  <%= f.check_box :complete  %>
-	  </div>
+  <div class="border-header">
+    <h1>
+      <h1>Workout</h1>
+    <div class="right">
+      <%= f.date_select :date %>
+      <%= f.check_box :complete  %>
+    </div>
   </div>
   <ul class="workout_sets std-list">
-	<% @workout.workout_sets.each_with_index do |workout_set , i| %>
-		<%= render workout_set, { :i => i.to_s } %>
-	<% end %>
+  <% @workout.workout_sets.each_with_index do |workout_set , i| %>
+    <%= render workout_set, { :i => i.to_s } %>
+  <% end %>
   </ul>
   <%= render "add_exercise_widget" %>
   <div class="actions">

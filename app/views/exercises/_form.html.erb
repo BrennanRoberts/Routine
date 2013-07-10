@@ -6,12 +6,12 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-		<% MuscleGroup.all.each do |muscle_group| %>
-		<div>
-			<%= check_box_tag "exercise[muscle_group_ids][]", muscle_group.id, @exercise.muscle_groups.include?(muscle_group) %>
-			<%= muscle_group.name %>
-		</div>
-		<% end %>
+    <% MuscleGroup.all.each do |muscle_group| %>
+    <div>
+      <%= check_box_tag "exercise[muscle_group_ids][]", muscle_group.id, @exercise.muscle_groups.include?(muscle_group) %>
+      <%= muscle_group.name %>
+    </div>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
