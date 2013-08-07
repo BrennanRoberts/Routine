@@ -209,7 +209,7 @@ header h1 a{
 	width: 260px;
 	height: 100px;
 	margin: 0 auto;
-	background: url(../images/banner.png);
+	background: url(../assets/banner.png);
 	text-indent: -10000px;
 }
 
@@ -350,7 +350,7 @@ a.new-exercise-button {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	padding: 6px 12px 3px 43px;
-	background: url(../images/add-icon.png) 12px center transparent no-repeat;
+	background: url(../assets/add-icon.png) 12px center transparent no-repeat;
 	text-decoration: none;
 }
 a.new-workout-button:hover,
@@ -367,7 +367,7 @@ a.new-exercise-button:hover {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	text-indent: -10000px;
-	background: url(../images/checkmark-icon.png) transparent no-repeat;
+	background: url(../assets/checkmark-icon.png) transparent no-repeat;
 	background-position: 100px 100px;
 	position: absolute;
 	margin-top: 6px;
@@ -396,7 +396,7 @@ ul.workout_sets li a.remove-workout-set {
 	display: block;
 	width: 28px;
 	height: 28px;
-	background: url(../images/remove-icon.png) center center no-repeat;
+	background: url(../assets/remove-icon.png) center center no-repeat;
 	text-indent: -10000px;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -455,7 +455,7 @@ ul.workout_sets li input[type=text] {
 }
 .add-exercise-widget .open-widget-button {
 	display: block;
-	background: url(../images/add-icon.png) left center no-repeat;
+	background: url(../assets/add-icon.png) left center no-repeat;
 	padding: 10px 0 7px 36px;
 	margin-left: 12px;
 	text-decoration: none;
@@ -483,7 +483,7 @@ ul.workout_sets li input[type=text] {
 	display: block;
 	width: 28px;
 	height: 28px;
-	background: url(../images/min-icon.png) center center no-repeat;
+	background: url(../assets/min-icon.png) center center no-repeat;
 	border: 3px solid transparent;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -505,7 +505,7 @@ ul.workout_sets li input[type=text] {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 3px solid #2c2c2c;
-	line-height: 1.7	;
+	line-height: 1.7;
 	
 	background-color: #2c2c2c;
 	height: 40px;
@@ -518,7 +518,7 @@ ul.workout_sets li input[type=text] {
 	margin-left: 12px;
 }
 .add-exercise-widget .control-header .clear {
-	background: url(../images/clear-icon.png) no-repeat center center;
+	background: url(../assets/clear-icon.png) no-repeat center center;
 	display: block;
 	float: right;
 	width: 46px;
@@ -531,7 +531,7 @@ ul.workout_sets li input[type=text] {
 .add-exercise-widget .control-bar-button {
 	display: block;
 	float: left;
-	background-image: url(../images/icons.png);
+	background-image: url(../assets/icons.png);
 	text-indent: -10000px;
 	width: 48px;
 	height: 48px;
@@ -626,3 +626,9 @@ ul.workout_sets li input[type=text] {
 	display: block;
 
 }
+
+/*
+*= require_self
+*= require_tree .
+*/
+

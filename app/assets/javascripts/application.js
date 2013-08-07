@@ -1,3 +1,8 @@
+//= require jquery
+//= require jquery_ujs
+//= require_self
+//= require_tree .
+
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 });
@@ -51,7 +56,7 @@ $('.workouts li a.complete-workout').click(function(e){
 
 
   //remove a workout_set from a workout
-  $('ul.workout_sets li a.remove-workout-set').live('click', function() {
+  $(document).on('click', 'ul.workout_sets li a.remove-workout-set', function() {
     var hidden_field = $(this).next('input[type=hidden]')[0];
     if(hidden_field) {
       hidden_field.value = '1';
@@ -108,7 +113,7 @@ $('.workouts li a.complete-workout').click(function(e){
     });
 
     //setup add exercise rows
-    $('.add-exercise', ep).live('click', function() {
+    $(document).on('click', '.add-exercise', function() {
       var ex_id = $(this).attr('data-exercise-id');
       that.select_exercise(2, ex_id);
       return false;
