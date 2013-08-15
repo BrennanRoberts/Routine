@@ -15,6 +15,10 @@
   <%= render "add_exercise_widget" %>
   <div class="actions">
     <%= f.submit :Save %>
-    <%= link_to "Delete", @workout, :confirm => 'Are you sure?', :method => :delete, :class => "delete-button" if controller.action_name == "edit" %>
+    <% if controller.action_name == "edit" %>
+      <%= link_to "Duplicate", duplicate_workout_path(@workout), :method => :post, :class => "duplicate button"  %>
+      <%= link_to "Delete", @workout, :confirm => 'Are you sure?', :method => :delete, :class => "delete-button button"  %>
+    <% end %>
   </div>
 <% end %>
+

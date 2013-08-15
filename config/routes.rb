@@ -9,6 +9,7 @@ Routine::Application.routes.draw do
   resources :workouts do
     member do
       put :complete
+      post :duplicate
     end
   end
 

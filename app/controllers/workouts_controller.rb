@@ -64,6 +64,20 @@ class WorkoutsController < ApplicationController
     end
   end
 
+  def duplicate
+    old = Workout.find(params[:id])
+    workout = old.dup
+    workout.date = Date.today
+    workout.workout_sets << old.workout_sets.map do |ws|
+      new = ws.dup
+      new.magnitude = nil
+      new.weight = nil
+      new
+    end
+    workout.save
+    redirect_to(edit_workout_path(workout), :notice => 'Workout duplicated')
+  end
+
   private
 
     def workout_params
