@@ -53,8 +53,6 @@ $('.workouts li a.complete-workout').click(function(e){
     update: utility.update_workout_set_order_values
   });
 
-
-
   //remove a workout_set from a workout
   $(document).on('click', 'ul.workout_sets li a.remove-workout-set', function() {
     var hidden_field = $(this).next('input[type=hidden]')[0];
