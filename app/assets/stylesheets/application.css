@@ -419,6 +419,8 @@ ul.workout_sets li a.remove-workout-set:hover {
 ul.workout_sets li .exercise-name {
 	display: block;	
 	cursor: move;
+  white-space: nowrap;
+  overflow: hidden;
 }
 ul.workout_sets li:hover .exercise-name {	
 	color: #fff;
