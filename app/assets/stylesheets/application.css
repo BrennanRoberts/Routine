@@ -259,8 +259,8 @@ nav li span {
 }
 
 #content .border-header h1 {
-	float: left;
 	font-size: 34px;
+  margin: 0 0 8px;
 }
 
 #content input {

@@ -23,20 +23,13 @@ $(function() {
 // WORKOUT#INDEX
 //------------------------------------------------------------------------------
 $('.workouts li a.complete-workout').click(function(e){
-  var jthis = $(this);
+  var $el = $(this);
   $.ajax(
     {
       type: 'put',
-      url: jthis.attr('href'),
+      url: $el.attr('href'),
       success: function(){
-        jthis.addClass('complete');
-        if(jthis.closest('ul').hasClass('upcoming')) {
-          var li = jthis.closest('li');
-          li.slideUp(function() {
-            $('ul.recent').prepend(li);
-            li.slideDown();
-          });
-        }
+        $el.addClass('complete');
       }
     }
   );

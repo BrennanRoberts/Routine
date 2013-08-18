@@ -1,7 +1,6 @@
 class WorkoutsController < ApplicationController
   def index
-    @upcoming_workouts =  current_user.workouts.today.incomplete | current_user.workouts.future
-    @past_workouts = current_user.workouts.today.complete | current_user.workouts.past
+    @workouts =  current_user.workouts.all
   end
 
   def show
