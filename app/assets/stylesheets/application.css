@@ -18,70 +18,70 @@
   font-weight: bold;
 }
 @font-face {
-	font-family: "Lobster 1.3";
-	src: url(../typefaces/Lobster_1.3-webfont.ttf);
+  font-family: "Lobster 1.3";
+  src: url(../typefaces/Lobster_1.3-webfont.ttf);
 }
 body {
-	font-family: Sansation;	
-	font-weight: lighter;
+  font-family: Sansation;
+  font-weight: lighter;
 }
-input[type=text], input[type=password], input[type=button], input[type=submit] { 
-	font-family: Sansation;
-	font-weight: lighter;
+input[type=text], input[type=password], input[type=button], input[type=submit] {
+  font-family: Sansation;
+  font-weight: lighter;
 }
 nav {
-	/* font-family: Eurostile; */
-	font-weight: lighter;
+  /* font-family: Eurostile; */
+  font-weight: lighter;
 }
 .border-header h1 {
-	font-weight: bold;
-	letter-spacing: -1px;
+  font-weight: bold;
+  letter-spacing: -1px;
 }
 .magnitude-label,
 .weight-label {
-	font-family: "Lobster 1.3";
+  font-family: "Lobster 1.3";
 }
 
 /*---------------------------------------------------------------------------------------*/
 /* HTML5 Elements */
 /*---------------------------------------------------------------------------------------*/
 header, nav {
-	display: block;
+  display: block;
 }
 
 /*---------------------------------------------------------------------------------------*/
 /* Reset and Basic Style */
 /*---------------------------------------------------------------------------------------*/
-body { 
-	background-color: #2c2c2c; 
-	color: #fff;
-	font-size: 28px;
-	overflow-y: scroll;
+body {
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 28px;
+  overflow-y: scroll;
 }
 
 ul { list-style: none; }
 a { color: #fff; }
 
-p { 
-	margin: 6px 0 40px;
-	line-height: 1.8;	
+p {
+  margin: 6px 0 40px;
+  line-height: 1.8;
 }
 
-input[type=text], input[type=password] { 
-	
+input[type=text], input[type=password] {
+
 }
 
 input[type=button], input[type=submit] {
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 3px solid #ffc600;
-	color: #fff;
-	padding: 10px 12px 6px;
-	background-color: transparent;
-	cursor: pointer;
-	font-size: 26px;
-	float: left;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 3px solid #ffc600;
+  color: #fff;
+  padding: 10px 12px 6px;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 26px;
+  float: left;
 }
 
 td { padding: 10px; }
@@ -90,31 +90,31 @@ td { padding: 10px; }
 
 div.field { margin-bottom: 20px; overflow: hidden;}
 div.field label {
-	color: #ddd;
-	
+  color: #ddd;
+
 }
 
 div.field_with_errors { display: inline;}
 
 
 div.error {
-	border: 3px solid #ba3e02;
-	border-radius : 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	padding: 10px 12px 6px;
-	margin-bottom: 20px;
+  border: 3px solid #ba3e02;
+  border-radius : 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 10px 12px 6px;
+  margin-bottom: 20px;
 }
 
 .delete-button {
-	display: block;
-	border: 3px solid #ba3e02;
-	border-radius : 5px;
-	-moz-border-radius : 5px;
-	-webkit-border-radius : 5px;
-	padding: 10px 12px 6px;
-	float: right;
-	text-decoration: none;
+  display: block;
+  border: 3px solid #ba3e02;
+  border-radius : 5px;
+  -moz-border-radius : 5px;
+  -webkit-border-radius : 5px;
+  padding: 10px 12px 6px;
+  float: right;
+  text-decoration: none;
 }
 
 /*---------------------------------------------------------------------------------------*/
@@ -122,27 +122,27 @@ div.error {
 /*---------------------------------------------------------------------------------------*/
 
 .muscle-bubble {
-	display: block;
-	float: left;
-	height: 28px;
-	margin: 6px 0px 6px 6px;
-	padding: 0 10px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-width: 3px;
-	border-style: solid;
-	line-height: 26px;
-	opacity: .4;
+  display: block;
+  float: left;
+  height: 28px;
+  margin: 6px 0px 6px 6px;
+  padding: 0 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-width: 3px;
+  border-style: solid;
+  line-height: 26px;
+  opacity: .4;
 }
 
 .muscle-bubble .muscle-bubble-inner {
-	font-size: 14px;
-	text-transform: uppercase;
-	display: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: none;
 }
 .muscle-bubble:hover .muscle-bubble-inner {
-	display: inline;
+  display: inline;
 }
 
 .abdomen { border-color: #6797bd; }
@@ -166,8 +166,8 @@ div.error {
 .muscle-group-hover-border.thigh:hover { border-color: #49a075; }
 
 .muscle-group-hover-border {
-	border-style: solid;
-	border-color: transparent;
+  border-style: solid;
+  border-color: transparent;
 }
 
 .left {float: left;}
@@ -175,165 +175,165 @@ div.error {
 .clearfix { clear: both; }
 
 .wrap {
-	width: 640px;
-	margin: 0 auto;
+  width: 640px;
+  margin: 0 auto;
 }
 
 /*---------------------------------------------------------------------------------------*/
 /* Header  */
 /*---------------------------------------------------------------------------------------*/
 header {
-	background-color: #212121;
-	text-align: center;
-	padding-top: 32px;
-	padding-bottom: 24px;
-	margin-bottom: 48px;
+  background-color: #212121;
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 header #usernav {
-	position: absolute;
-	right: 10px;
-	top: 5px;
-	font-size: 15px;
-	text-align: right;
-	color: #666;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 15px;
+  text-align: right;
+  color: #666;
 }
 
 header #usernav a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 header h1 a{
-	display: block;
-	width: 260px;
-	height: 100px;
-	margin: 0 auto;
-	background: url(../assets/banner.png);
-	text-indent: -10000px;
+  display: block;
+  width: 260px;
+  height: 100px;
+  margin: 0 auto;
+  background: url(../assets/banner.png);
+  text-indent: -10000px;
 }
 
-nav { 
-	margin-top: 24px;
-	font-size: 20px;
-	letter-spacing: 5px;
-	text-transform: uppercase;
+nav {
+  margin-top: 24px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
 }
 
 nav ul {
-	overflow: hidden;
-	width: 720px;
-	margin: 0 auto;
+  overflow: hidden;
+  width: 720px;
+  margin: 0 auto;
 }
 
 nav li {
-	float: left;
+  float: left;
 }
 
 nav li a {
-	display: block;
-	width: 240px;
-	text-decoration: none; 
+  display: block;
+  width: 240px;
+  text-decoration: none;
 }
 nav li a:hover {
-	text-shadow: 0 0 4px #999;
+  text-shadow: 0 0 4px #999;
 }
 
 nav li span {
-	display: block;
-	width: 240px;
-	color: #414141;
+  display: block;
+  width: 240px;
+  color: #414141;
 }
 
 /*---------------------------------------------------------------------------------------*/
 /* Content */
 /*---------------------------------------------------------------------------------------*/
 #content {
-	font-size: 26px;
+  font-size: 26px;
 }
 
 #content .border-header {
-	border-bottom: 1px solid #666;
-	padding: 0 0 3px 6px;
-	overflow: hidden;
+  border-bottom: 1px solid #666;
+  padding: 0 0 3px 6px;
+  overflow: hidden;
 }
 
 #content .border-header h1 {
-	font-size: 34px;
+  font-size: 34px;
   margin: 0 0 8px;
 }
 
 #content input {
-	!font-size: 26px;
+  !font-size: 26px;
 }
 
 /*---------------------------------------------------------------------------------------*/
 /* Standard List Styles
 /*---------------------------------------------------------------------------------------*/
 .std-list {
-	margin: 6px 0 40px;
+  margin: 6px 0 40px;
 }
 .std-list li {
-	height: 46px;
-	padding: 0 6px;
-	line-height: 50px;
-	border-radius: 8px;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	position: relative;
-	color: #ccc;
+  height: 46px;
+  padding: 0 6px;
+  line-height: 50px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  position: relative;
+  color: #ccc;
 }
 .std-list li:hover {
-	background-color: #212121;
-	color: #fff;
+  background-color: #212121;
+  color: #fff;
 }
 .std-list a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 .std-list li .index {
-	color: #595959;
-	display: block;
-	position: absolute;
-	left: -10px;
-	width: 50px;
-	text-align: right;
+  color: #595959;
+  display: block;
+  position: absolute;
+  left: -10px;
+  width: 50px;
+  text-align: right;
 }
 .std-list li:hover .index span {
-	visibility: hidden;
+  visibility: hidden;
 }
-.std-list li .round-rect { 
-	display: block;
-	float: left;
-	height: 28px;
-	margin: 6px 0px 6px 6px;
-	padding: 0 10px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-width: 3px;
-	border-style: solid;
-	line-height: 26px;
+.std-list li .round-rect {
+  display: block;
+  float: left;
+  height: 28px;
+  margin: 6px 0px 6px 6px;
+  padding: 0 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-width: 3px;
+  border-style: solid;
+  line-height: 26px;
 }
 .std-list li .details {
-	float: right;
+  float: right;
 }
 .muscles {
-	display: block;
-	float: left;
+  display: block;
+  float: left;
 }
 .std-list li:hover .muscle-bubble {
-	opacity: 1;
+  opacity: 1;
 }
 ul.workout_sets li .field-wrap {
-	border-color: transparent;
-	line-height: 25px;
+  border-color: transparent;
+  line-height: 25px;
 }
 ul.workout_sets li:hover .field-wrap {
-	border-color: #3e3e3e;
+  border-color: #3e3e3e;
 }
 ul.workout_sets li:hover .field-wrap:hover {
-	background-color: #3e3e3e;
+  background-color: #3e3e3e;
 }
 /*---------------------------------------------------------------------------------------*/
 /* Workout Index
@@ -341,291 +341,291 @@ ul.workout_sets li:hover .field-wrap:hover {
 .workouts li {
 }
 .workouts li a.workout-date{
-	text-decoration: none;
+  text-decoration: none;
 }
 a.new-workout-button,
 a.new-exercise-button {
-	display: block;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	padding: 6px 12px 3px 43px;
-	background: url(../assets/add-icon.png) 12px center transparent no-repeat;
-	text-decoration: none;
+  display: block;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 6px 12px 3px 43px;
+  background: url(../assets/add-icon.png) 12px center transparent no-repeat;
+  text-decoration: none;
 }
 a.new-workout-button:hover,
 a.new-exercise-button:hover {
-	background-color: #212121;
+  background-color: #212121;
 }
 .workouts li a.complete-workout{
-	display: block;
-	float: left;
-	width: 28px;
-	height: 28px;
-	border: 3px solid #424342;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	text-indent: -10000px;
-	background: url(../assets/checkmark-icon.png) transparent no-repeat;
-	background-position: 100px 100px;
-	position: absolute;
-	margin-top: 6px;
-	left: -46px;
+  display: block;
+  float: left;
+  width: 28px;
+  height: 28px;
+  border: 3px solid #424342;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  text-indent: -10000px;
+  background: url(../assets/checkmark-icon.png) transparent no-repeat;
+  background-position: 100px 100px;
+  position: absolute;
+  margin-top: 6px;
+  left: -46px;
 }
 .workouts li a.complete-workout.complete{
-	background-position: center center;
-	border-color: transparent;
+  background-position: center center;
+  border-color: transparent;
 }
 .workouts li a.complete-workout:hover{
-	background-position: center center;
+  background-position: center center;
 }
 /*---------------------------------------------------------------------------------------*/
 /* Workout Set table in workout#_form */
 /*---------------------------------------------------------------------------------------*/
 
 ul.workout_sets {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 ul.workout_sets li {
-	margin-left: -52px;
-	padding-left: 52px;
+  margin-left: -52px;
+  padding-left: 52px;
 }
 
 ul.workout_sets li a.remove-workout-set {
-	display: block;
-	width: 28px;
-	height: 28px;
-	background: url(../assets/remove-icon.png) center center no-repeat;
-	text-indent: -10000px;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border: 3px solid transparent;
-	margin: 6px 12px 6px 6px;
-	visibility: hidden;
-	z-index: 10;
-	position: absolute;
-	left: 0;
-	top: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: url(../assets/remove-icon.png) center center no-repeat;
+  text-indent: -10000px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 3px solid transparent;
+  margin: 6px 12px 6px 6px;
+  visibility: hidden;
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 ul.workout_sets li:hover a.remove-workout-set {
-	visibility: visible;
+  visibility: visible;
 }
 ul.workout_sets li a.remove-workout-set:hover {
-	border-color: #353535;
-	background-color: #353535;
+  border-color: #353535;
+  background-color: #353535;
 }
 ul.workout_sets li .exercise-name {
-	display: block;	
-	cursor: move;
+  display: block;
+  cursor: move;
   white-space: nowrap;
   overflow: hidden;
 }
-ul.workout_sets li:hover .exercise-name {	
-	color: #fff;
+ul.workout_sets li:hover .exercise-name {
+  color: #fff;
 }
 
 ul.workout_sets li input[type=text] {
-	border: none; 
-	background-color: transparent; 
-	outline: none; 
-	color: #fff; 
-	text-align: right; 
-	padding: 0; 
-	margin: 0; 
-	font-size: 26px;
-	line-height: 32px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: #fff;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  font-size: 26px;
+  line-height: 32px;
 }
 .magnitude-label,
 .weight-label {
-	color: #595959;	
-	font-size: 23px;
+  color: #595959;
+  font-size: 23px;
 }
 
 /*---------------------------------------------------------------------------------------*/
 /* Add Exercise widget in Workout#_form */
 /*---------------------------------------------------------------------------------------*/
 .add-exercise-widget {
-	background-color: #212121;
-	border-radius: 8px;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	margin-left: -12px;
-	margin-bottom: 20px;
-	position: relative;
+  background-color: #212121;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  margin-left: -12px;
+  margin-bottom: 20px;
+  position: relative;
 }
 .add-exercise-widget .open-widget-button {
-	display: block;
-	background: url(../assets/add-icon.png) left center no-repeat;
-	padding: 10px 0 7px 36px;
-	margin-left: 12px;
-	text-decoration: none;
+  display: block;
+  background: url(../assets/add-icon.png) left center no-repeat;
+  padding: 10px 0 7px 36px;
+  margin-left: 12px;
+  text-decoration: none;
 }
 .add-exercise-widget .exercise-picker {
-	padding-bottom: 12px;
+  padding-bottom: 12px;
 }
 .add-exercise-widget .control-bar {
-	padding: 10px;
-	position: relative;
-	overflow: hidden;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
 }
 .add-exercise-widget .left-tab {
-	position: absolute; 
-	left: -40px; 
-	top: 12px;
-	width: 40px;
-	height: 46px;
-	border-top-left-radius: 8px;
-	border-bottom-left-radius: 8px;
-	text-indent: -10000px;
-	background-color: #212121;
+  position: absolute;
+  left: -40px;
+  top: 12px;
+  width: 40px;
+  height: 46px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-indent: -10000px;
+  background-color: #212121;
 }
 .add-exercise-widget .left-tab .min-widget {
-	display: block;
-	width: 28px;
-	height: 28px;
-	background: url(../assets/min-icon.png) center center no-repeat;
-	border: 3px solid transparent;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	margin: 6px 0 0 6px;
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: url(../assets/min-icon.png) center center no-repeat;
+  border: 3px solid transparent;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin: 6px 0 0 6px;
 }
 .add-exercise-widget .left-tab .min-widget:hover {
-	background-color: #353535;
-	border-color: #353535;
+  background-color: #353535;
+  border-color: #353535;
 }
 .add-exercise-widget .control-headers {
-	width: 554px;
-	overflow: hidden;
-	float: left;
+  width: 554px;
+  overflow: hidden;
+  float: left;
 }
 .add-exercise-widget .control-header {
-	display: none;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 3px solid #2c2c2c;
-	line-height: 1.7;
-	
-	background-color: #2c2c2c;
-	height: 40px;
+  display: none;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 3px solid #2c2c2c;
+  line-height: 1.7;
+
+  background-color: #2c2c2c;
+  height: 40px;
 }
 .add-exercise-widget .control-header.current {
-	display:block;
+  display:block;
 }
 .add-exercise-widget .control-header span,
 .add-exercise-widget .control-header input {
-	margin-left: 12px;
+  margin-left: 12px;
 }
 .add-exercise-widget .control-header .clear {
-	background: url(../assets/clear-icon.png) no-repeat center center;
-	display: block;
-	float: right;
-	width: 46px;
-	height: 46px;
-	text-indent: -10000px;
+  background: url(../assets/clear-icon.png) no-repeat center center;
+  display: block;
+  float: right;
+  width: 46px;
+  height: 46px;
+  text-indent: -10000px;
 }
 .add-exercise-widget .control-view-buttons {
-	float: right;
+  float: right;
 }
 .add-exercise-widget .control-bar-button {
-	display: block;
-	float: left;
-	background-image: url(../assets/icons.png);
-	text-indent: -10000px;
-	width: 48px;
-	height: 48px;
-	opacity: .6;
+  display: block;
+  float: left;
+  background-image: url(../assets/icons.png);
+  text-indent: -10000px;
+  width: 48px;
+  height: 48px;
+  opacity: .6;
 }
 .add-exercise-widget .control-bar-button:hover {
-	opacity: 1;
+  opacity: 1;
 }
 .add-exercise-widget .control-bar-button.current {
-	display: none;
+  display: none;
 }
 .add-exercise-widget .search-exercises-button {
-	background-position: 0 -48px;
+  background-position: 0 -48px;
 }
 .add-exercise-widget .search-exercises-control-header input.search-field {
-	background-color: transparent;
-	border: none;
-	color: #fff;
-	font-size: 26px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 26px;
 }
 .add-exercise-widget .exercise-picker-panel {
-	display: none;
+  display: none;
 }
 .add-exercise-widget .exercise-picker-panel.current {
-	display: block;
+  display: block;
 }
 .add-exercise-widget .widget-list {
-	overflow: hidden;
-	margin: 0 12px;
+  overflow: hidden;
+  margin: 0 12px;
 }
 .add-exercise-widget .widget-list > li > a {
-	display: block;
-	height: 46px;
-	
-	color: #595959;
-	border-radius: 8px;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	position: relative;
-	text-decoration: none;
-	line-height: 1.9;
+  display: block;
+  height: 46px;
+
+  color: #595959;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  position: relative;
+  text-decoration: none;
+  line-height: 1.9;
 }
 .add-exercise-widget .widget-list > li > a:hover {
 
-	color: #fff;
+  color: #fff;
 }
 .add-exercise-widget .widget-list.muscle-groups > li {
-	width: 32%;
-	display: block;
-	float: left;
+  width: 32%;
+  display: block;
+  float: left;
 }
 .add-exercise-widget .widget-list.muscle-groups > li > a {
-	display: block;
-	border-width: 3px;
-	height: 40px;
+  display: block;
+  border-width: 3px;
+  height: 40px;
 }
 .add-exercise-widget .widget-list.muscle-groups > li > a:hover {
-	color: #fff;
+  color: #fff;
 }
 .add-exercise-widget .widget-list.muscle-groups > li > a > span.muscle-group-name {
-	margin: 0 12px;
+  margin: 0 12px;
 }
 
 .add-exercise-widget .muscle-group-exercises li a {
-	
+
 }
 
 /*---------------------------------------------------------------------------------------*/
 /* Login Page */
 /*---------------------------------------------------------------------------------------*/
 #login-wrap {
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	background-color: #212121;
-	margin: 30px 90px;
-	padding: 30px 30px 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  background-color: #212121;
+  margin: 30px 90px;
+  padding: 30px 30px 10px;
 }
 #login-wrap input[type=text],
 #login-wrap input[type=password] {
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	color: #fff;
-	border: 3px solid #78a2c4;
-	background-color: #272727;
-	padding: 10px 12px 6px;
-	font-size: 26px;
-	width: 370px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: #fff;
+  border: 3px solid #78a2c4;
+  background-color: #272727;
+  padding: 10px 12px 6px;
+  font-size: 26px;
+  width: 370px;
 }
 #login-wrap input[type=submit] {
-	display: block;
+  display: block;
 
 }
 
