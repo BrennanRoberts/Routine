@@ -72,16 +72,9 @@ input[type=text], input[type=password] {
 }
 
 input[type=button], input[type=submit] {
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border: 3px solid #ffc600;
-  color: #fff;
-  padding: 10px 12px 6px;
   background-color: transparent;
   cursor: pointer;
   font-size: 26px;
-  float: left;
 }
 
 td { padding: 10px; }
@@ -106,15 +99,22 @@ div.error {
   margin-bottom: 20px;
 }
 
-.delete-button {
+.button {
   display: block;
-  border: 3px solid #ba3e02;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #ffc600;
   border-radius : 5px;
-  -moz-border-radius : 5px;
-  -webkit-border-radius : 5px;
   padding: 10px 12px 6px;
-  float: right;
+  float: left;
+  color: #fff;
   text-decoration: none;
+  margin: 0;
+}
+
+.delete.button {
+  border-color: #ba3e02;
+  float: right;
 }
 
 /*---------------------------------------------------------------------------------------*/
