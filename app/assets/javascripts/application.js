@@ -1,7 +1,8 @@
 //= require jquery
-//= require jquery_ujs
+//= require jquery-ui
+//= require underscore
+//= require backbone
 //= require_self
-//= require_tree .
 
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
@@ -56,124 +57,137 @@ $('.workouts li a.complete-workout').click(function(e){
     return false;
   });
 
-  //Add Exercise Widget
-  var add_ex_widget = function(w){
-    var that,
-        //external
-        workout_set_list = $('.workout_sets'), //external list of workout_sets
-        //internal
-        ep = w.find('.exercise-picker'),
-        control_bar = $('.control-bar', ep),
-        control_headers = $('.control-headers', ep).children(),
-        browse_exercises_button = $('.browse-exercises-button', control_bar),
-        search_exercises_button = $('.search-exercises-button', control_bar),
-        panels = $('.exercise-picker-panel', ep),
-        muscle_groups_list = $('ul.muscle-groups', ep), // list of muscle groups
-        muscle_group_exercises_list = $('.muscle-group-exercises', ep), // list of exercises within a muscle group
-        selected_muscle_group_name = $('.selected-muscle-group-control-header .muscle-group-name', ep),
-        search_field = $("input[type=text][data-autocomplete-url]", ep), // search exercises text field
-        search_results_list = $('.search-exercises-results-list', ep) // list of search results
+  var ExercisePicker = Backbone.View.extend({
 
-    var cache = {};
+    events: {
+      'click .open-widget-button': '_onOpenClick',
+      'click .min-widget'        : '_onMinClick',
+      'click .control-bar .control-bar-button': '_onTabClick',
+      'click .add-exercise'      : '_onExerciseClick',
+      'click .muscle-groups a'   : '_onMuscleGroupClick',
+      'click .back-to-browse-muscle-group-button' : '_onBackClick',
+      'keyup input[type=text][data-autocomplete-url]': '_onSearchKeyup'
+    },
 
-    //open up widget
-    $('.open-widget-button', w).click(function(){
-      $(this).hide();
-      ep.show()
-    });
+    initialize: function() {
+      this.$workout_set_list = this.$('.workout_sets');
+      this.$picker = this.$('.exercise-picker');
+      this.$control_bar = this.$('.control-bar');
+      this.$control_headers = this.$('.control-headers').children();
+      this.$browse_exercises_button = $('.browse-exercises-button', this.$control_bar);
+      this.$search_exercises_button = $('.search-exercises-button', this.$control_bar);
+      this.$panels = this.$('.exercise-picker-panel');
+      this.$muscle_groups_list = this.$('ul.muscle-groups'); // list of muscle groups
+      this.$muscle_group_exercises_list = this.$('.muscle-group-exercises'); // list of exercises within a muscle group
+      this.$selected_muscle_group_name = this.$('.selected-muscle-group-control-header .muscle-group-name');
+      this.$search_field = this.$('input[type=text][data-autocomplete-url]'); // search exercises text field
+      this.$search_results_list = this.$('.search-exercises-results-list'); // list of search results
+
+      this.cache = {};
+    },
+
+    _onOpenClick: function(e) {
+      this.$('.open-widget-button').hide();
+      this.$picker.show();
+      // TODO this doesn't really need to be a link...
+      e.preventDefault();
+    },
 
     //close widget
-    $('.min-widget', ep).click(function(){
-      ep.hide();
-      w.find('.open-widget-button').show();
-    });
+    _onMinClick: function() {
+      this$picker.hide();
+      this.$('.open-widget-button').show();
+    },
 
     //setup top controls
-    $('.control-bar .control-bar-button', ep).click(function(){
-      var jthis = $(this);
+    _onTabClick: function(e) {
+      var jthis = $(e.target);
       var name = jthis.attr('data-tab-name');
 
       //adjust buttons
       jthis.addClass('current').siblings().removeClass('current');
 
       //adjust control headers
-      that.switch_view(name);
+      this.switch_view(name);
 
       //adjust picker panes
-      ep.find('.' + name + '-panel').addClass('current').siblings('.current').removeClass('current');
-    });
+      this.$picker.find('.' + name + '-panel').addClass('current').siblings('.current').removeClass('current');
+    },
 
-    //setup add exercise rows
-    $(document).on('click', '.add-exercise', function() {
-      var ex_id = $(this).attr('data-exercise-id');
-      that.select_exercise(2, ex_id);
-      return false;
-    });
+    _onExerciseClick: function(e) {
+      var ex_id = $(e.currentTarget).attr('data-exercise-id');
+      this.select_exercise(2, ex_id);
+    },
 
-    //setup muscle group clicks
-    muscle_groups_list.find('li a').click(function() {
-      var jthis = $(this);
+    _onMuscleGroupClick: function(e) {
+      var jthis = $(e.currentTarget);
+      console.log(e);
       var url = jthis.attr('href');
 
-      selected_muscle_group_name.html(jthis.text());
+      this.$selected_muscle_group_name.html(jthis.text());
 
-      $.get(url, null, function(data) {
-        muscle_group_exercises_list.html(data);
-        that.switch_view('selected-muscle-group');
-      }, 'html');
+      $.get(url, null, _.bind(function(data) {
+        this.$muscle_group_exercises_list.html(data);
+        this.switch_view('selected-muscle-group');
+      }, this), 'html');
 
-      return false;
-    });
+      // TODO this doesn't really need to be a link...
+      e.preventDefault();
+    },
 
-    //back to all muscle groups
-    $('.back-to-browse-muscle-group-button', ep).click(function(){
-      that.switch_view('browse-exercises');
-    });
+    _onBackClick: function() {
+      this.switch_view('browse-exercises');
+    },
 
-    //setup search exercise field
-    search_field.keyup( function() {
-      var val = search_field.val();
+    _onSearchKeyup: function(e) {
+      var $field = $(e.currentTarget);
+      var val = $field.val();
+      var url;
+
       if (val.length > 0){
-        var url = search_field.attr('data-autocomplete-url') + '?query=' + search_field.val();
+        url = $field.attr('data-autocomplete-url') + '?query=' + val;
 
-        $.get(url, null, function(data){
-          search_results_list.html(data);
-        }, 'html');
+        $.get(url, null, _.bind(function(data){
+          this.$search_results_list.html(data);
+        }, this), 'html');
       } else {
-        search_results_list.empty();
+        this.$search_results_list.empty();
       }
-    });
+    },
 
-    that = {
-      select_exercise: function(workout_id, exercise_id) {
-        $.getScript('/workout_sets/new.js?workout_id=' + workout_id + '&exercise_id=' + exercise_id );
-/*
-        var template = $('#workout_sets_fields_template').html(),
-            regexp = new RegExp('new_workout_sets', 'g'),
-            new_id = new Date().getTime(),
-            new_content = $(template.replace(regexp, new_id));
+    select_exercise: function(workout_id, exercise_id) {
+      $.getScript('/workout_sets/new.js?workout_id=' + workout_id + '&exercise_id=' + exercise_id );
+      // var template = $('#workout_sets_fields_template').html();
+      // var regexp = new RegExp('new_workout_sets', 'g');
+      // var new_id = new Date().getTime();
+      // var new_content = $(template.replace(regexp, new_id));
 
-        new_content.find('#workout_workout_sets_attributes_' + new_id + '_exercise_id').val(id);
-        new_content.find('.exercise-name').html(name);
-        workout_set_list.append(new_content);
-*/
-      },
-      switch_view: function(mode){
-        //change the header
-        control_headers.filter('.' + mode + '-control-header').addClass('current').siblings().removeClass('current');
+      // new_content.find('#workout_workout_sets_attributes_' + new_id + '_exercise_id').val(id);
+      // new_content.find('.exercise-name').html(name);
+      // workout_set_list.append(new_content);
+    },
 
-        //change the panels
-        panels.filter('.' + mode + '-panel').addClass('current').siblings().removeClass('current');
+    switch_view: function(mode) {
+      //change the header
+      this.$control_headers.filter('.' + mode + '-control-header').addClass('current').siblings().removeClass('current');
 
-      }
+      //change the panels
+      this.$panels.filter('.' + mode + '-panel').addClass('current').siblings().removeClass('current');
+
     }
 
-    w.data('add-exercise-widget', that);
-  }
+    // w.data('add-exercise-widget', that);
+  });
 
-  add_ex_widget($('.add-exercise-widget'));
+  // TODO only load and run if necessary
+  (function() {
+    var ew = $('.add-exercise-widget');
+    if (ew.length) {
+      new ExercisePicker({
+        el: ew
+      });
+    }
+  }());
 
-  namenext = function(node) {
-    node.show().siblings().hide();
-  }
 });
+
